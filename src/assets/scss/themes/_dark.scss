@@ -1,0 +1,199 @@
+//For dark version
+
+[data-bs-theme="dark"] {
+
+  //dark and light mood
+  .tt-theme-light {
+    display: none;
+  }
+
+  .tt-theme-dark {
+    display: block;
+  }
+
+  //header
+  .navbar-light .navbar-brand img.logo-white,
+  .navbar-dark.sticky-header.affix .navbar-brand img.logo-white {
+    display: block;
+  }
+
+  .navbar-dark.sticky-header.affix .navbar-brand img.logo-color,
+  .navbar-dark .navbar-brand img.logo-color,
+  .navbar-light .navbar-brand img.logo-color,
+  .dg-hero-section .hero-curve.left,
+  .dg-hero-section .hero-curve.right,
+  .pf-curve.left,
+  .pf-curve.right,
+  .tm-curve.left,
+  .tm-curve.right,
+  .ct-curve.left,
+  .ct-curve.right,
+  .sc-cta-section {
+    display: none !important;
+  }
+
+  .dropdown-grid-item a:hover,
+  .ins-contact-form .ins-input-field label,
+  .dg-portfolio-section,
+  .dg-feedback-section,
+  .bgc-white-50p {
+    background: $gray-900;
+  }
+
+  .main-menu li.nav-item .dropdown-menu:before,
+  .dg-pricing-column .dg-pricing-amount {
+    background-color: $gray-800;
+  }
+
+  .navbar-light .main-menu li a.nav-link,
+  .navbar-light .action-btns a.btn-link,
+  .navbar-dark.sticky-header.affix .main-menu li a.nav-link,
+  .navbar-dark.sticky-header.affix .action-btns a.btn-link {
+    color: $gray-300 !important;
+  }
+
+  //  background
+  .bg-white,
+  .navbar-light.sticky-header.affix,
+  .navbar-dark.sticky-header.affix,
+  .payment-counter-bg,
+  .hd-pricing-section,
+  .ins-hero-section,
+  .ins-brands,
+  .bgc-white {
+    background-color: $black !important;
+  }
+
+  .ins-hero-section .ins-hero-curve {
+    display: none;
+  }
+
+  .ins-brands {
+    padding: 30px;
+    border-radius: 6px;
+  }
+
+  .bg-gradient,
+  .event-hero {
+    background: linear-gradient(90deg, $gray-900, darken($primary, 45%)) !important;
+  }
+
+  .ins-contact-section::before {
+    background: linear-gradient(95.5deg, rgb(17 24 39), rgb(17 24 38 / 98%));
+  }
+
+  .payment-news-letter {
+    background: linear-gradient(0deg, $gray-800 13.3%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .process-card:hover {
+    background: $gray-800;
+  }
+
+  .two-bg-dark-light,
+  .hd-hero-section {
+    background-image: -webkit-gradient(linear,
+        left top,
+        right top,
+        color-stop(40%, $dark),
+        color-stop(0, $gray-900));
+    background-image: linear-gradient(90deg, $dark 40%, $gray-900 0);
+  }
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    .two-bg-dark-light {
+      background: $gray-900;
+    }
+  }
+
+  .process-icon-2:after,
+  .mk-sf-item,
+  .mk-app-single,
+  .mk-partner-item,
+  .hd-accordion .accordion-item,
+  .sponsor-logo-bg .logo,
+  .sc-team-filter-nav li a {
+    border-color: $gray-800 !important;
+  }
+
+  .mk-partners-list .mk-partner-item:hover,
+  .up-coming-event,
+  .event-about,
+  .ev-price,
+  .bgc-background,
+  .ca-digital-service {
+    background: $gray-800 !important;
+  }
+
+  //  color
+  body {
+    color: $gray-400;
+  }
+
+  .bg-white h1,
+  .bg-white h2,
+  .bg-white h3,
+  .bg-white h4,
+  .bg-white h5,
+  .bg-white h6,
+  .bg-light h1,
+  .bg-light h2,
+  .bg-light h3,
+  .bg-light h4,
+  .bg-light h5,
+  .bg-light h6 {
+    color: $gray-100;
+  }
+
+  .clr-text {
+    color: $gray-100;
+  }
+
+  //  form
+  .form-control:focus {
+    background-color: $gray-800 !important;
+  }
+
+  .bg-dark input.form-control,
+  .bg-gradient input.form-control,
+  .newsletter-form input.form-control {
+    border-color: $gray-600;
+  }
+
+  .register-form,
+  .hero-subscribe-form {
+
+    input.form-control,
+    textarea.form-control {
+      border-color: $gray-800 !important;
+    }
+  }
+
+  //  pricing
+
+  //  testimonial
+  .appTwoReviewSwiper-Controller .swiper-button-prev,
+  .appTwoReviewSwiper-Controller .swiper-button-next {
+    color: $gray-300 !important;
+  }
+
+  .testimonial-tab-menu.nav-pills .nav-link.active,
+  .connected-app-single:hover,
+  .appTwoReviewSwiper-Controller .swiper-button-prev,
+  .appTwoReviewSwiper-Controller .swiper-button-next,
+  .swiper-nav-control .swiper-button-next,
+  .swiper-nav-control .swiper-button-prev,
+  .single-article {
+    background-color: $gray-900 !important;
+    border-color: $gray-800 !important;
+  }
+
+  @media (min-width: 1200px) {
+
+    .ca-design-section__title-top,
+    .ca-design-section__title {
+      color: $gray-100
+    }
+  }
+
+}

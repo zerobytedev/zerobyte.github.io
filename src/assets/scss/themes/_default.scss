@@ -1,0 +1,24 @@
+//Default dark version.
+.tt-theme-light,
+.tt-theme-dark{
+  position: relative;
+  top: 3px;
+}
+.tt-theme-light {
+  display: block;
+}
+.tt-theme-dark {
+  display: none;
+}
+[data-bs-theme="light"]{
+  .digi-testimonial-title,
+  .bg-dark .bg-light-subtle h1,
+  .bg-dark .bg-light-subtle h2,
+  .bg-dark .bg-light-subtle h3,
+  .bg-dark .bg-light-subtle h4,
+  .bg-dark .bg-light-subtle h5,
+  .bg-dark .bg-light-subtle h6{
+    color: $headings-color !important;
+  }
+}
+

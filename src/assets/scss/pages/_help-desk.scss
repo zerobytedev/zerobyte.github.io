@@ -1,0 +1,438 @@
+/************* help desk hero section *************/ 
+.hd-hero-section {
+    background-image: $hd-light-gradient; 
+    padding: 140px 0 310px 0;
+    .hd-hero-man {
+        left: 150px; 
+        bottom: 80px;
+    }
+    .hd-hero-girl {
+        right: 80px; 
+        bottom: 80px;
+    }
+    .desk-girl {
+        left: 20%;
+        top: 90px;
+        z-index: -1;
+    }
+    .line-plan {
+        left: calc(50% + 30px);
+        bottom: -60px;
+        transform: translateX(-50%);
+    }
+    .arrow-line-shape {
+        left: 100px;
+        top: 74px;
+    }
+    @include screen-1800 {
+        .hd-hero-man, .hd-hero-girl {
+            width: 400px;
+        }
+        .desk-girl {
+            left: 190px;
+        }
+    }
+    @include screen-1440 {
+        .hd-hero-man {
+            width: 300px;
+            left: 70px;
+        }
+    }
+    @include screen-1200 {
+        .desk-girl {
+            display: none;
+        }
+        .hd-hero-man {
+            left: 40px;
+        }
+        .hd-hero-girl {
+            right: 0;
+        }
+    }
+    @include screen-992 {
+        padding: 120px 0; 
+        .hd-hero-man, .hd-hero-girl {
+            display: none;
+        }
+    }
+}
+.hd-hero-title {
+    mark {
+        color: $hd-primary;
+        position: relative;
+        .hd-line-shape {
+            bottom: -8px;
+            left: 10px;
+        }
+    }
+}
+.hd-hero-form {
+    border: 1px solid $border-color;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 8px 7px 8px 16px;
+    border-radius: 6px;
+    input {
+        border: 0; 
+        width: 100%;
+        outline: 0; 
+        padding-right: 15px;
+    }
+}
+
+/************* how it works section *************/ 
+.hd-htw-section {
+    mark {
+        color: $hd-primary;
+        .arrow-rounded {
+            left: -12px; 
+            top: -3px;
+            width: 140px;
+        }
+    }
+    .arrow-multiple {
+        left: 280px;
+        bottom: 0;
+    }
+}
+
+.hd-description {
+    &.hd-border-right {
+        &::after {
+            content: ''; 
+            position: absolute;
+            right: -24px; 
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 120px;
+            background-color: rgba($hd-border-color, 0.5);
+        }
+    }
+    @include screen-992 {
+        &.hd-border-right {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.htw-single-box {
+    .number-serial {
+        font-size: 90px;
+        font-family: $headings-font-family; 
+        font-weight: 800;
+        z-index: -1;
+        right: 24px;
+        top: 0;
+        color: $hd-secondary;
+        line-height: 1.3em; 
+        opacity: 0.1;
+    }
+    &.mts-50 {
+        margin-top: 50px;
+    }
+    &.mts-100 {
+        margin-top: 100px;
+    }
+    @include screen-1200 {
+        &.mts-50, &.mts-100 {
+            margin-top: 0;
+        }
+    }
+}
+
+.hd-title {
+    h2, h3 {
+        mark {
+            color: $hd-primary;
+            .line-shape {
+                left: 0; 
+                bottom: -12px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+/************** support section ***********/
+.hd-accordion {
+    max-width: 536px;
+    .accordion-item {
+        border: 1px solid $border-color;
+        border-radius: 6px;
+        + .accordion-item {
+            margin-top: 24px;
+        }
+        &.active {
+            box-shadow: $mk-shadow;
+            .accordion-header {
+                a {
+                    &::after {
+                        font-family: 'Font Awesome 6 Free';
+                        content: '\f068';
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .accordion-header {
+        a {
+            font-family: $headings-font-family; 
+            font-weight: 700;
+            display: block;
+            padding: 16px 24px;
+            position: relative;
+            &::after {
+                content: '\2b';
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                font-size: 20px;
+                position: absolute;
+                right: 24px;
+            }
+        }
+    }
+    @include screen-992 {
+        max-width: 100%;
+    }
+}
+
+.hd-support-right {
+    .arrow-blue {
+        right: 80px;
+        bottom: 0;
+    }
+}
+
+.hd_exbox {
+    background-image: $hd-light-gradient-2;
+    padding: 1px;
+    border-radius: 15px;
+    bottom: 16px;
+    left: 16px;
+    .hd_exbox_content {
+        text-align: center;
+        padding: 24px 12px 32px;
+        border-radius: 15px;
+        h2 {
+            color: $hd-primary;
+            font-weight: 600;
+        }
+        p {
+            font-weight: 600;
+            color: $gray-800;
+        }
+    }
+}
+.hd-support-box-wrapper {
+    gap: 16px;
+}
+.hd-support-box {
+    padding: 16px 24px;
+    span {
+        font-size: 20px;
+    }
+    p {
+        font-weight: 600;
+    }
+}
+
+/************* brands section start **********/
+.hd-brands-section {
+    .hd-brands-box {
+        padding: 90px 40px;
+        background-color: $hd-dark;
+        border-radius: 12px;
+    }
+}
+
+.dark-explore-btn {
+    color: $white;
+    font-weight: 600;
+    transition: $transition-base; 
+    &:hover {
+        color: $hd-primary;
+    }
+}
+
+.hd-brands-wrapper {
+    gap: 0; 
+    .hd-single-brand {
+        width: 25%;
+        min-height: 64px;
+        display: inline-flex; 
+        align-items: center;
+        justify-content: center;
+        padding: 15px 18px;
+        &.border-line-right {
+            border-right: 1px solid rgba($hd-border-color, 0.15);
+        }
+        &.border-line-bottom {
+            border-bottom: 1px solid rgba($hd-border-color, 0.15);
+        }
+        @include screen-576 {
+            width: 33%;
+            &.border-line-right, &.border-line-bottom {
+                border-right: 0; 
+                border-bottom: 0;
+            }
+        }
+        @include screen-460 {
+            width: 50%;
+        }
+    }
+}
+
+/************* pricing section ************/ 
+.hd-pricing-section {
+    background-color: $hd-bg;
+    padding-bottom: 180px;
+    .arrow-shape {
+        left: 70px;
+        top: 50px;
+    }
+    @include screen-576 {
+        padding-bottom: 80px;
+    }
+}
+
+.hd-pricing-single {
+    padding: 40px 32px;
+    border-radius: 12px;
+    &::after {
+        content: ''; 
+        position: absolute;
+        left: 43%;
+        top: 0; 
+        width: 1px; 
+        height: 100%;
+        background-color: $mk-border;
+    }
+    .hd-pricing-info {
+        text-align: center;
+        p {
+            font-size: 14px;
+        }
+        .hd-pricing-amount {
+            sup {
+                font-size: 24px;
+            }
+            span {
+                font-size: 16px;
+            }
+        }
+    }
+    ul.hd-pricing-features {
+        padding-left: 32px;
+        margin: 0;
+        li {
+            font-size: $font-size-sm;
+            + li {
+                margin-top: 12px;
+            }
+            span {
+                color: $hd-success;
+            }
+        }
+    }
+    @include screen-768 {
+        &::after {
+            display: none;
+        }
+        ul.hd-pricing-features {
+            padding-left: 0;
+            margin-top: 32px;
+            text-align: center;
+        }
+    }
+}
+
+
+/************** faq section start ************/
+.hd-faq-section {
+    @include screen-576 {
+        padding-top: 80px;
+        overflow: hidden;
+    }
+}
+.hd-chat-box {
+    background-color: $hd-secondary;
+    border-radius: 12px;
+    padding: 40px 32px 0;
+    margin-top: -60px;
+    .hd-explore-btn {
+        font-size: 18px;
+        font-weight: 500; 
+        color: $white;
+        text-decoration: underline;
+        transition: $transition-base; 
+        &:hover {
+            color: $hd-primary;
+        }
+    }
+    @include screen-576 {
+        margin-top: 0;
+    }
+}
+
+.hd-accordion2 {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: $hd-shadow;
+    max-width: 100%;
+    .accordion-item {
+        border-radius: 0;
+        border: 0;
+        + .accordion-item {
+            margin-top: 0;
+            border-top: 1px solid rgba($hd-border-color, 0.3);
+        }
+        &.active {
+            box-shadow: none;
+        }
+    }
+    .accordion-header {
+        a {
+            font-weight: 600;
+        }
+    }
+}
+
+
+/*************** call to action ***********/ 
+.hd-cta-box {
+    padding: 70px 32px;
+    border-radius: 12px;
+    .box-shape {
+        left: 70px;
+        bottom: 30px;
+    }
+    .box-shape-2 {
+        right: 40px;
+        bottom: 30px;
+    }
+    .hd-cta-box-content {
+        max-width: 570px;
+        margin: 0 auto;
+    }
+    .cta-btns {
+        gap: 32px;
+    }
+}
+.hd-video-btn {
+    color: $headings-color;
+    font-weight: 600;
+    transition: $transition-base;
+    span {
+        width: 56px;
+        height: 56px;
+        border: 1px solid $hd-primary;
+        color: $hd-primary;
+    }
+    &:hover {
+        color: $hd-primary;
+    }
+}
