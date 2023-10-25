@@ -8,6 +8,12 @@ import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { MenuComponent } from './header/menu/menu.component';
+import { ServicesComponent } from './services/services.component';
+import { IntegrationsComponent } from './integrations/integrations.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { PreloaderComponent } from './preloader/preloader.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
     FooterComponent,
     NotFoundComponent,
     HomeComponent,
-    ComingSoonComponent
+    ComingSoonComponent,
+    MenuComponent,
+    ServicesComponent,
+    IntegrationsComponent,
+    AboutComponent,
+    ContactComponent,
+    PreloaderComponent
   ],
   imports: [
     BrowserModule,
