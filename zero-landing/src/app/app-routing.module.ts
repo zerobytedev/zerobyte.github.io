@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'services', component: ComingSoonComponent},
   {path: 'integrations', component: ComingSoonComponent},
   {path: 'about', component: ComingSoonComponent},
-  {path: 'contact', component: ComingSoonComponent},
+  {path: 'contact', component: ContactComponent},
   {path: 'blog', component: ComingSoonComponent},
   {path: 'career', component: ComingSoonComponent},
   {path: 'cookie-policy', component: ComingSoonComponent},
