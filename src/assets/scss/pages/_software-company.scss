@@ -1,0 +1,493 @@
+/****************** hero section start ***************/ 
+.sc-hero-section {
+    background: $sc-primary-gradient;
+    padding: 150px 0 200px 0;
+    .hero-circle-shape {
+        animation: 10s rotate-animation linear infinite;
+        left: -10px;
+        top: -10px;
+
+    }
+    .prism {
+        top: 230px;
+        left: 50%;
+        animation: 10s rotate-animation linear infinite;
+    }
+    .coin {
+        left: 50%;
+        bottom: 280px;
+        animation: 10s upsdown-sm linear infinite;
+    }
+    .skew-1 {
+        width: 360px; 
+        height: 70px;
+        background-color: #FFB116;
+        right: 25px;
+        bottom: 65px;
+        transform: skew(-15deg);
+        z-index: 1;
+    }
+    .skew-2 {
+        width: 536px;
+        height: 70px;
+        background-color: #807DFB;
+        transform: skew(-20deg);
+        left: 275px;
+        bottom: 0;
+        z-index: 1;
+    }
+    .hero-line {
+        left: calc(50% + 1px);
+        opacity: 0.7;
+    }
+    @include screen-1400 {
+        .skew-1 {
+            bottom: 25px;
+        }
+        .skew-2 {
+            left: 125px;
+        }
+    }
+    @include screen-1200 {
+        .skew-1, .skew-2 {
+            display: none;
+        }
+    }
+    @include screen-768 {
+        padding: 130px 0;
+    }
+}
+
+.border-line-bg {
+    background-image: url('../img/software-company/border-line.png');
+    background-repeat: repeat-y;
+    background-position: center top;
+}
+
+/********************************** service section start **********************/ 
+.sc-shape-gradient {
+    border-radius: 100px;
+    background: $sc-shape-gradient;
+}
+.sc-shape-gradient-1 {
+    width: 115px;
+    height: 215px;
+    left: 60px;
+    top: 100px;
+    transform: rotate(-90deg);
+}
+.sc-shape-gradient-2 {
+    width: 115px;
+    height: 390px;
+    top: 0;
+    right: 40px;
+}
+.sc-shape-gradient-3 {
+    width: 115px;
+    height: 214px;
+    top: 35px;
+    right: 200px;
+}
+.sc-service-card {
+    padding: 40px 24px;
+    box-shadow: $sc-box-shadow; 
+    transition: $transition-base; 
+    .explore-more {
+        color: $dg-text-color;
+        font-weight: 600;
+        &:hover {
+            color: $primary;
+        }
+    }
+    .feature-icon {
+        opacity: 0.15;
+        transition: $transition-base;
+    }
+    &:hover {
+        box-shadow: $sc-hover-shadow;
+        .feature-icon {
+            opacity: 1;
+        }
+    }
+}
+
+/********************** about section start ******************/
+.sc-about-section {
+    .sc-shape-gradient-4 {
+        width: 100px;
+        height: 214px;
+        top: 100px;
+        left: 40px;
+    }
+    .sc-shape-gradient-5 {
+        width: 115px;
+        height: 270px;
+        bottom: 60px;
+        left: 100px;
+    }
+    .sc-shape-gradient-6 {
+        width: 115px;
+        height: 214px;
+        right: 80px;
+        top: 150px;
+        transform: rotate(90deg);
+    }
+}
+.sc-about-left {
+    .ab-shape {
+        left: 90px; 
+        top: 25px;
+    }
+    @include screen-1440 {
+        .ab-shape {
+            left: 0; 
+            top: 0;
+        }
+    }
+}
+.sc-about-right {
+    .doted-border {
+        border-bottom: 1px dotted $sc-border-color;
+    }
+}
+.sc-about-author {
+    @include screen-576 {
+        flex-wrap: wrap;
+    }
+}
+
+/******************** feedback section start ****************/
+.sc-feedback-section {
+    .client-demo-1 {
+        left: 100px;
+        top: 150px;
+        animation: 3s zoom-1 infinite linear;
+    }
+    .client-demo-2 {
+        top: 330px;
+        left: 125px;
+        animation: 3.1s zoom-1 infinite linear;
+    }
+    .client-demo-3 {
+        left: 80px; 
+        bottom: 85px;
+        animation: 3.2s zoom-1 infinite linear;
+    }
+    .client-demo-4 {
+        right: 110px;
+        top: 120px; 
+        animation: 3.3s zoom-1 infinite linear;
+    }
+    .client-demo-5 {
+        right: 155px;
+        top: 330px;
+        animation: 3.4s zoom-1 infinite linear;
+    }
+    .client-demo-6 {
+        right: 110px; 
+        bottom: 130px;
+        animation: 3.5s zoom-1 infinite linear;
+    }
+    .client-demo {
+        box-shadow: $dg-shadow-1;
+    }
+}
+.sc-feedback-card {
+    padding: 40px 24px;
+    box-sizing: border-box;
+    .sc-star-list {
+        gap: 1px;
+        li {
+            color: $dg-warning-color;
+            font-size: 15px;
+        }
+    }
+} 
+
+/************************** portfolio section start *********************/
+.sc-portfolio-section {
+    .sc-shape-gradient-7 {
+        width: 115px;
+        height: 214px;
+        left: 75px;
+        top: 150px;
+        transform: rotate(-90deg);
+    }
+    .sc-shape-gradient-8 {
+        width: 100px; 
+        height: 214px;
+        left: 40px;
+        bottom: 100px;
+    }
+    .sc-shape-gradient-9 {
+        width: 100px; 
+        height: 214px;
+        left: 180px;
+        bottom: 0;
+    }
+    .sc-shape-gradient-10 {
+        width: 115px; 
+        height: 214px;
+        right: 180px;
+        top: 100px;
+    }
+    .sc-shape-gradient-11 {
+        width: 115px; 
+        height: 380px;
+        right: 40px;
+        top: 130px;
+    }
+}
+.sc-portfolio-card {
+    & > img {
+        transition: $transition-base;
+    }
+    .pf-content-box {
+        position: absolute;
+        left: 24px;
+        bottom: 0;
+        max-width: 424px;
+        transition: $transition-base; 
+        opacity: 0; 
+        visibility: hidden;
+    }
+    &:hover {
+        & > img {
+            transform: scale(1.02);
+        }
+        .pf-content-box {
+            opacity: 1;
+            visibility: visible;
+            bottom: 24px;
+        }
+    }
+    &.card-sm {
+        .pf-content-box {
+            width: calc(100% - 48px);
+            left: 24px;
+            h5 {
+                font-size: 18px;
+            }
+        }
+    }
+    &.active {
+        .pf-content-box {
+            opacity: 1; 
+            bottom: 24px;
+            visibility: visible;
+        }
+    }
+    @include screen-1400 {
+        .pf-content-box {
+            width: calc(100% - 48px);
+        }
+    }
+}
+
+/******************* call to action start ****************/ 
+.sc-cta-section {
+ &::before {
+    content: ''; 
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+    background-color: $gray-200;
+    z-index: -1;
+ }   
+}
+.sc-cta-box {
+    background: $sc-primary-gradient; 
+    padding: 64px 90px;
+    .cta-shape {
+        left: -2px;
+        top: 3px;
+        animation: 15s rotate-animation linear infinite;
+    }
+    @include screen-576 {
+        padding: 60px 40px;
+    }
+}
+
+/************************* how it work section start ******************/
+.htw-single-item {
+    padding: 40px 24px;
+    box-shadow: $sc-box-shadow;
+    transition: $transition-base; 
+    &:hover {
+        box-shadow: $sc-hover-shadow;
+    }
+}
+
+/***************** team section start **************/
+.sc-team-filter-nav {
+    gap: 24px;
+    li {
+        a {
+            display: inline-flex; 
+            align-items: center;
+            color: $dg-text-color;
+            font-weight: 600;
+            padding: 16px 35px;
+            border: 1px solid $border-color;
+            border-radius: 5px;
+            transition: $transition-base; 
+            &.active {
+                background-color: $primary; 
+                border-color: $primary;
+                color: $white;
+                svg {
+                    stroke: $white;
+                    path {
+                        stroke: $white;
+                    }
+                }
+            }
+        }
+    }
+    @include screen-1400 {
+        gap: 16px;
+    }
+    @include screen-576 {
+        gap: 8px;
+        li {
+            a {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+.sc-team-card {
+    padding: 40px 24px;
+    box-shadow: $sc-box-shadow;
+    transition: $transition-base;
+    .thumbnail {
+        .thumb-shape {
+            left: 20px;
+            top: 10px;
+        }
+    }
+    h5 {
+        transition: $transition-base;
+    }
+    .sc-team-social {
+        gap: 15px;
+        a {
+            color: $dg-text-color;
+            transition: $transition-base; 
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+    &:hover {
+        box-shadow: $sc-hover-shadow;
+        .thumbnail {
+            .thumb-shape {
+                animation: 3.5s shake-animation linear infinite;
+            }
+        }
+        h5 {
+            color: $primary;
+        }
+    }
+}
+
+/************************ pricing section start ****************/
+.sc-pricing-switch {
+    display: inline-block;
+    background-color: $white;
+    button {
+        border: 0;
+        background: transparent;
+        color: $crm-secondary;
+        font-weight: 600;
+        transition: $transition-base; 
+        padding: 10px 24px;
+        &.active {
+            background-color: $primary;
+            color: $white;
+        }
+    }
+}
+.sc-pricing-column {
+    padding: 40px;
+    box-shadow: $sc-hover-shadow;
+    .icon-wrapper {
+        width: 70px;
+        height: 70px; 
+        background-color: $sc-icon-bg;
+    }
+    .sc-pricing-title {
+        h6 {
+            font-weight: 500; 
+        }
+        h4 {
+            font-weight: 600;
+        }
+    }
+    .pricing-features {
+        li {
+            font-weight: 600;
+            span {
+                color: $primary;
+            }
+            + li {
+                margin-top: 12px;
+            }
+        }
+    }
+    &.popular {
+        background: $sc-primary-gradient;
+        h1,h5,h6,h4,p {
+            color: $white !important;
+        }
+        ul {
+            li {
+                color: $white;
+                span {
+                    color: $dg-warning-color;
+                }
+            }
+        }
+    }
+}
+
+/**************** blog section start ***************/ 
+.sc-blog-card {
+    box-shadow: $sc-box-shadow; 
+    transition: $transition-base; 
+    .thumbnail {
+        img {
+            transition: $transition-base;
+        }
+    }
+    .category-btn {
+        background: $sc-primary-gradient; 
+        color: $white;
+        font-size: 14px;
+        padding: 2px 8px;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+    .author-info {
+        & > img {
+            width: 45px;
+        }
+        .authors-info-right {
+            .meta {
+                font-size: 12px;
+            }
+        }
+    }
+    &:hover {
+        box-shadow: $sc-hover-shadow;
+        .thumbnail {
+            img {
+                transform: scale(1.02);
+            }
+        }
+    }
+}

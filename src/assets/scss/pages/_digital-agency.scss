@@ -1,0 +1,576 @@
+.dg-hero-section {
+    background-color: #071233;
+    padding: 220px 0 100px 0;
+    .hero-curve {
+        bottom: -2px;
+        &.left {
+            left: 0; 
+        }
+        &.right {
+            right: 0;
+        }
+    }
+    .dg-circle-blur {
+        width: 446px;
+        height: 446px;
+        background: $dg-color-2;
+        top: 0;
+        left: 100px;
+        z-index: -1;
+        filter: blur(200px);
+        opacity: 0.7;
+    }
+    .hero-line-shape-1 {
+        right: 51px;
+        bottom: 0;
+    }
+    .hero-line-shape-2 {
+        top: 80px;
+        right: 100px;
+    }
+    .triangle-circle {
+        left: 40%;
+        top: 39%;
+    }
+    .dg-hero-circle-1 {
+        top: 136px;
+        right: 450px;
+        animation: 15s circle-moving infinite linear;
+    }
+    .dg-hero-circle-2 {
+        right: 240px;
+        bottom: 345px;
+        animation: 20s circle-moving infinite linear;
+    }
+    .dg-hero-circle-3 {
+        bottom: 75px;
+        left: 55%;
+        animation: 25s circle-moving infinite linear;
+    }
+    .dg-hero-right {
+        .doted-shape {
+            left: 150px;
+            top: 0;
+        }
+    }
+    @include screen-1800 {
+        .hero-curve {
+            width: 150px;
+            height: calc(100% + 2px);
+        }
+    }
+    @include screen-1440 {
+        .hero-curve {
+            display: none;
+        }
+    }
+}
+.dg-circle-style-1 {
+    width: 15px;
+    height: 15px;
+    background: $dg-color-4;
+    border: 1px solid $white;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); 
+        background: $dg-color-4;
+        filter: blur(15px);
+    }
+}
+.dg-circle-style-2 {
+    width: 15px;
+    height: 15px;
+    background: $dg-color-5;
+    border: 1px solid $white;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); 
+        background: $dg-color-5;
+        filter: blur(15px);
+    }
+}
+/*********** about section start ************/ 
+.dg-about-section {
+    .dg-about-right {
+        margin-bottom: -60px;
+    }
+    .dg-circle-1 {
+        bottom: 296px;
+        left: 75px;
+    }
+    .dg-circle-2 {
+        bottom: 78px; 
+        right: 18%;
+        animation: 22s circle-moving infinite linear;
+    }
+    .dg-circle-3 {
+        bottom: 65px;
+        left: 380px;
+        animation: 15s circle-moving infinite linear;
+    }
+    .dg-circle-4 {
+        right: 70px;
+        bottom: 356px;
+    }
+    @include screen-992 {
+        padding-bottom: 60px;
+        overflow: hidden;
+        .dg-about-right {
+            margin-bottom: 0;
+        }
+    }
+}
+.dg-about-bottom {
+    max-width: 516px;
+    .shape-box {
+        position: absolute;
+        right: -30px;
+        top: -40px;
+        z-index: -1;
+    }
+}
+
+/***************** service section start ****************/ 
+.dg-service-section {
+    padding-top: 180px;
+    .sr-line {
+        top: 80px;
+    }
+    .sr-circle-1 {
+        right: 80px; 
+        top: 74px;
+    }
+    .sr-circle-2 {
+        right: 24%;
+        top: 304px;
+        animation: 15s circle-moving infinite linear;
+    }
+    .sr-doted-shape {
+        bottom: -42px;
+    }
+    @include screen-992 {
+        padding-top: 60px;
+    }
+}
+.dg-service-item {
+    padding: 40px 24px;
+    transition: $transition-base;
+    .icon-wrapper {
+        width: 80px; 
+        height: 80px;
+        background-color: $white;
+        padding: 10px;
+        span {
+            &.bg-color-1 {
+                background: $dg-color-1;
+            }
+            &.bg-color-2 {
+                background: $dg-color-2;
+            }
+            &.bg-color-3 {
+                background: $dg-color-3;
+            }
+            &.bg-color-4 {
+                background: $dg-color-4;
+            }
+        }
+        &.shadow-1 {
+            box-shadow: $dg-shadow-1;
+        }
+        &.shadow-2 {
+            box-shadow: $dg-shadow-2;
+        }
+        &.shadow-3 {
+            box-shadow: $dg-shadow-3;
+        }
+        &.shadow-4 {
+            box-shadow: $dg-shadow-4;
+        }
+    }
+    .number-count {
+        padding-left: 56px;
+        background: $dg-color-1;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        &::before {
+            content: ''; 
+            position: absolute;
+            left: 0; 
+            bottom: 10px;
+            width: 40px;
+            height: 1px;
+        }
+        &.color-1 {
+            &::before {
+                background: $dg-color-1;
+            }
+        }
+        &.color-2 {
+            background: $dg-color-2;
+            &::before {
+                background: $dg-color-2;
+            }
+        }
+        &.color-3 {
+            background: $dg-color-3;
+            &::before {
+                background: $dg-color-3;
+            }
+        }
+        &.color-4 {
+            background: $dg-color-4;
+            &::before {
+                background: $dg-color-4;
+            }
+        }
+    }
+    &:hover {
+        box-shadow: $dg-box-shadow;
+    }
+}
+
+/**************************portfolio section start*******************/
+.dg-portfolio-section {
+    background-color: $dg-section-bg;
+    padding-bottom: 95px;
+    .pf-curve {
+        height: 100%;
+        &.left {
+            left: 0;
+        }
+        &.right {
+            right: 0;
+        }
+    }
+    .pf-line {
+        top: 0;
+        right: 350px;
+    }
+    .pf-circle {
+        top: 56px;
+        right: 30%;
+        animation: 15s circle-moving infinite linear;
+    }
+    @include screen-992 {
+        padding-bottom: 40px;
+    }
+}
+.dg-portfolio-single {
+    .dg-portfolio-item-content {
+        padding: 0 24px 40px;
+    }
+}
+.dg-category-btn {
+    background-color: $dg-meta-color; 
+    display: inline-block; 
+    padding: 4px 8px;
+}
+.dg-explore-btn {
+    color: $crm-placeholder; 
+    transition: $transition-base; 
+    span {
+        color: $crm-placeholder;
+        transition: $transition-base;
+    }
+    &:hover {
+        color: $dg-primary-color;
+        span {
+            color: $dg-primary-color;
+        }
+    }
+}
+
+.dg-slider-control {
+    min-height: 25px;
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        background: $dg-placeholder-color;
+        transition: $transition-base;
+        border: 1px solid transparent;
+        margin: 3px;
+        &.swiper-pagination-bullet-active {
+            background: $dg-color-4;
+            border-color: $white;
+            width: 12px;
+            height: 12px;
+            box-shadow: $dg-shadow-4;
+        }
+    }
+}
+
+
+/****************** pricing section start *************/
+.dg-pricing-section {
+    .triangle-circle {
+        top: 142px;
+        left: 64%;
+    }
+    .pr-line-shape-1, 
+    .pr-line-shape-2 {
+        top: 100px;
+    }
+    .dg-circle-1 {
+        top: 94px;
+        left: 175px;
+        animation: 15s circle-moving linear infinite;
+    }
+    .dg-circle-2 {
+        top: 325px;
+        left: 30%;
+        animation: 10s circle-moving linear infinite;
+    }
+    .dg-circle-3 {
+        right: 200px;
+        top: 163px;
+        animation: 25s circle-moving linear infinite;
+    }
+    .pr-doted {
+        left: 58%;
+        bottom: -70px;
+    }
+}
+.dg-pricing-tab {
+    ul {
+        li {
+            a {
+                padding: 10px 24px;
+                display: inline-block;
+                font-weight: 600;
+                transition: $transition-base;
+                &.active {
+                    background-color: $dg-primary-color;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+.dg-pricing-column {
+    padding: 40px 24px;
+    transition: $transition-base;
+    .offer-badge {
+        right: 18px;
+    }
+    .icon-wrapper {
+        width: 80px;
+        height: 80px;
+        padding: 10px;
+        box-shadow: $dg-shadow-1;
+        span {
+            background: $dg-color-1;
+        }
+        &.bg-color-2 {
+            box-shadow: $dg-shadow-4;
+            span {
+                background: $dg-color-4; 
+            }
+        }
+        &.bg-color-3 {
+            box-shadow: $dg-shadow-3;
+            span {
+                background: $dg-color-3; 
+            }
+        }
+    }
+    .dg-feature-list {
+        max-width: 210px; 
+        li {
+            span {
+                color: $dg-color-1;
+            }
+            + li {
+                margin-top: 10px;
+            }
+        }
+    }
+    .dg-pricing-amount {
+        width: 292px;
+        background-color: $hd-light-bg;
+        padding: 16px 0 24px 0;
+        margin-top: 32px;
+        span {
+            font-size: 15px;
+        }
+        &.bg-dg-primary {
+            background-color: $dg-primary-color;
+            h2, span {
+                color: $white;
+            }
+            .dg-outline-btn {
+                background-color: $white;
+                color: $dg-heading-color; 
+                border-color: $white;
+                &:hover {
+                    background-color: $dg-heading-color;
+                    color: $white;
+                    border-color: $dg-heading-color;
+                }
+            }
+        }
+    }
+    &:hover {
+        box-shadow: $dg-box-shadow;
+    }
+} 
+
+/****************** team section start *********************/ 
+.dg-team-section {
+    .tm-curve {
+        &.left {
+            left: 0; 
+        }
+        &.right {
+            right: 0;
+        }
+    }
+    .team-line {
+        right: 60px;
+    }
+    .dg-circle-1 {
+        right: 150px;
+        bottom: 300px;
+    }
+    .dg-circle-2 {
+        left: 50%;
+        bottom: 65px;
+        animation: 15s circle-moving linear infinite;
+    }
+}
+.dg-team-single {
+    & > img {
+        transition: $transition-base;
+    }
+    .designation-box {
+        position: absolute;
+        padding: 24px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        opacity: 0; 
+        visibility: hidden;
+        transition: $transition-base;
+        h6 {
+            font-size: 16px;
+        }
+    }
+    &:hover {
+        & > img {
+            transform: scale(1.1);
+        }
+        .designation-box {
+            opacity: 1; 
+            bottom: 24px;
+            visibility: visible;
+        }
+    }
+}
+
+/********************** feedback section start ****************/
+.dg-feedback-section {
+    background-color: $dg-layout-bg;
+}
+.dg-feedback-single {
+    padding: 40px 24px;
+    box-sizing: border-box;
+    transition: $transition-base;
+    .clients-thumbnail {
+        box-shadow: $dg-shadow-1;
+    }
+    .serial-number {
+        color: $dg-color-1;
+        padding-left: 48px;
+        &::before {
+            content: ''; 
+            position: absolute;
+            left: 0; 
+            bottom: 10px;
+            width: 40px;
+            height: 1px;
+            background-color: $dg-color-1;
+        }
+        &.color-2 {
+            color: $webflow;
+            &::before {
+                background-color: $webflow;
+            }
+        }
+        &.color-3 {
+            color: $google;
+            &::before {
+                background-color: $google;
+            }
+        }
+    }
+    &:hover {
+        box-shadow: $box-shadow;
+    } 
+}
+
+
+/********************* call to action ******************/ 
+.dg-cta-section {
+    .ct-curve {
+        &.left {
+            left: 0;
+        }
+        &.right {
+            right: 0;
+        }
+    }
+    .dg-circle {
+        bottom: 50px;
+        animation: 25s circle-moving linear infinite;
+    }
+}
+.dg-cta-imgs {
+    gap: 24px;
+    @include screen-576 {
+        gap: 16px;
+    }
+}
+.dg-cta-btns {
+    grid-column-gap: 24px;
+    grid-row-gap: 16px;
+}
+
+/************************ blog section start **************/ 
+.dg-blog-section {
+    background-color: $dg-layout-bg;
+}
+.dg-blog-card {
+    padding: 24px 24px 40px;
+    transition: $transition-base;
+    .thumbnail {
+        img {
+            transition: $transition-base;
+        }
+    }
+    h5 {
+        color: $dg-heading-color;
+        transition: $transition-base;
+        &:hover {
+            color: $dg-primary-color;
+        }
+    }
+    &:hover {
+        box-shadow: $dg-box-shadow;
+        .thumbnail {
+            img {
+                transform: scale(1.01);
+            }
+        }
+    }
+}
