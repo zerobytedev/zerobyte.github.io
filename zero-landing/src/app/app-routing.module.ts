@@ -3,9 +3,6 @@ import {RouterModule, Routes} from '@angular/router';
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {HomeComponent} from "./home/home.component";
 import {ComingSoonComponent} from "./coming-soon/coming-soon.component";
-import {ServicesComponent} from "./services/services.component";
-import {IntegrationsComponent} from "./integrations/integrations.component";
-import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
 
 const routes: Routes = [
@@ -26,7 +23,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
