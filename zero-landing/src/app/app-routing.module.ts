@@ -6,7 +6,7 @@ import {ComingSoonComponent} from "./coming-soon/coming-soon.component";
 import {ContactComponent} from "./contact/contact.component";
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: ComingSoonComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: 'coming-soon', component: ComingSoonComponent},
   {path: 'services', component: ComingSoonComponent},
