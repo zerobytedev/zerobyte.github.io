@@ -33,7 +33,7 @@
                 <strong>9am to 5pm EST.</strong>
               </p>
             </div>
-            <a href="mailto:info@zerobyte.ge" class="btn btn-link mt-auto">Chat with us</a>
+            <a href="mailto:info@zerobyte.ge" class="btn btn-link mt-auto">Email info@zerobyte.ge</a>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
@@ -41,10 +41,13 @@
             <span class="fas fa-envelope fa-3x text-primary"></span>
             <div class="contact-promo-info mb-4">
               <h5>Email Us</h5>
-              <p>Simple drop us an email at <strong>info@zerobyte.ge</strong>
-                and you'll receive a reply within 24 hours</p>
+              <p>For general inquiries use <strong>info@zerobyte.ge</strong>.<br/>
+                For careers use <strong>career@zerobyte.ge</strong>.</p>
             </div>
-            <a href="mailto:info@zerobyte.ge" class="btn btn-primary mt-auto">Email Us</a>
+            <div class="d-grid gap-2 mt-auto">
+              <a href="mailto:info@zerobyte.ge" class="btn btn-primary">Email info@zerobyte.ge</a>
+              <a href="mailto:career@zerobyte.ge" class="btn btn-outline-primary">Email career@zerobyte.ge</a>
+            </div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
@@ -56,7 +59,7 @@
                 <strong>9am to 6pm GET.</strong>
               </p>
             </div>
-            <a href="tel:00-976-561-008" class="btn btn-link mt-auto">+995-574-139-013</a>
+            <a href="tel:+995574139013" class="btn btn-link mt-auto">+995 574 139 013</a>
           </div>
         </div>
       </div>
@@ -70,45 +73,59 @@
       <div class="row justify-content-lg-between align-items-center">
         <div class="col-lg-6 col-md-8">
           <div class="section-heading">
-            <h2>Talk to Our Sales & Marketing Department Team</h2>
-            <p>Collaboratively promote client-focused convergence vis-a-vis customer directed alignments via
-              standardized infrastructures.</p>
+            <h2>Tell us about your project</h2>
+            <p>We’ll get back within one business day. Select inquiry type and leave a message. Your email client will open to finalize the message.</p>
           </div>
-          <form action="#" class="register-form">
+          <form (ngSubmit)="onSubmit()" #f="ngForm" class="register-form">
+            <div class="mb-3">
+              <label class="mb-1">Inquiry type</label>
+              <div class="d-flex gap-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="type" id="typeGeneral" [(ngModel)]="form.type" [value]="'general'">
+                  <label class="form-check-label" for="typeGeneral">General</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="type" id="typeCareer" [(ngModel)]="form.type" [value]="'career'">
+                  <label class="form-check-label" for="typeCareer">Career</label>
+                </div>
+              </div>
+              <small class="text-muted">This will send your message to {{ targetEmail }}.</small>
+            </div>
             <div class="row">
               <div class="col-sm-6">
                 <label for="firstName" class="mb-1">First name <span
                   class="text-danger">*</span></label>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" id="firstName" required placeholder="First name" aria-label="First name">
+                  <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="form.firstName" required placeholder="First name" aria-label="First name">
                 </div>
               </div>
               <div class="col-sm-6 ">
                 <label for="lastName" class="mb-1">Last name</label>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" id="lastName" placeholder="Last name" aria-label="Last name">
+                  <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="form.lastName" placeholder="Last name" aria-label="Last name">
                 </div>
               </div>
               <div class="col-sm-6">
                 <label for="phone" class="mb-1">Phone <span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" id="phone" required placeholder="Phone" aria-label="Phone">
+                  <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="form.phone" required placeholder="Phone" aria-label="Phone">
                 </div>
               </div>
               <div class="col-sm-6">
                 <label for="email" class="mb-1">Email<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
-                  <input type="email" class="form-control" id="email" required placeholder="Email" aria-label="Email">
+                  <input type="email" class="form-control" id="email" name="email" [(ngModel)]="form.email" required placeholder="Email" aria-label="Email">
                 </div>
               </div>
               <div class="col-12">
                 <label for="yourMessage" class="mb-1">Message <span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
-                  <textarea class="form-control" id="yourMessage" required placeholder="How can we help you?" style="height: 120px"></textarea>
+                  <textarea class="form-control" id="yourMessage" name="message" [(ngModel)]="form.message" required placeholder="How can we help you?" style="height: 120px"></textarea>
                 </div>
               </div>
             </div>
             <button type="submit" class="btn btn-primary mt-4">Get in Touch</button>
+            <div class="form-text mt-2">Prefer direct email? <a href="mailto:info@zerobyte.ge">info@zerobyte.ge</a> or <a href="mailto:career@zerobyte.ge">career@zerobyte.ge</a></div>
           </form>
         </div>
         <div class="col-lg-5 col-md-10">

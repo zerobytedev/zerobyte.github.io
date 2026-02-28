@@ -6,7 +6,8 @@ import {ComingSoonComponent} from "./coming-soon/coming-soon.component";
 import {ContactComponent} from "./contact/contact.component";
 
 const routes: Routes = [
-  {path: '', component: ComingSoonComponent},
+  // Landing page as default route
+  {path: '', component: HomeComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: 'coming-soon', component: ComingSoonComponent},
   {path: 'services', component: ComingSoonComponent},
@@ -23,7 +24,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
