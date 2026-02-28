@@ -776,8 +776,8 @@ jQuery(function ($) {
     } else {
       setDarkMode(false);
     }
-    var toggleButton = document.querySelector(".tt-theme-toggle");
-    toggleButton && toggleButton.addEventListener("click", toggleDarkMode);
+    // Click listener removed: Angular's (click)="toggleTheme()" owns this interaction.
+    // Keeping initDarkMode() only for fast theme restoration before Angular bootstraps.
   };
   initDarkMode();
 });
