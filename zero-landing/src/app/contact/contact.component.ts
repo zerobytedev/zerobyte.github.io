@@ -43,7 +43,11 @@ export class ContactComponent {
     const body = encodeURIComponent(lines.join('\n'));
     const mailto = `mailto:${this.targetEmail}?subject=${subject}&body=${body}`;
 
-    // Open user email client
-    window.location.href = mailto;
+    // Open user email client via temporary anchor (more reliable cross-browser)
+    const a = document.createElement('a');
+    a.href = mailto;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   }
 }
