@@ -1,16 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
+
+  private routerSub!: Subscription;
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    // Restore saved theme on every navigation (header re-mounts each time)
     const saved = localStorage.getItem('theme');
     this.applyTheme(saved === 'dark');
+
+    this.routerSub = this.router.events.pipe(
+      filter(event => event instanceof NavigationStart)
+    ).subscribe(() => {
+      const offcanvasEl = document.getElementById('offcanvasWithBackdrop');
+      if (offcanvasEl) {
+        const bsOffcanvas = (window as any).bootstrap?.Offcanvas?.getInstance(offcanvasEl);
+        bsOffcanvas?.hide();
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.routerSub?.unsubscribe();
   }
 
   toggleTheme(): void {
