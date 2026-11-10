@@ -12,7 +12,8 @@ export interface SeoData {
 }
 
 const ORIGIN = 'https://zerobyte.ge';
-const OG_IMAGE = `${ORIGIN}/assets/img/og-zerobyte.png`;
+const OG_IMAGE = `${ORIGIN}/assets/img/og-zerobyte.jpg`;
+const OG_IMAGE_ALT = 'ZEROBYTE — software development company in Tbilisi, Georgia';
 
 /** Sets title, description, canonical and Open Graph tags from each route's `data.seo`. */
 @Injectable({ providedIn: 'root' })
@@ -44,13 +45,16 @@ export class SeoService {
       ['og:description', seo.description, 'property'],
       ['og:url', url, 'property'],
       ['og:image', OG_IMAGE, 'property'],
+      ['og:image:secure_url', OG_IMAGE, 'property'],
+      ['og:image:type', 'image/jpeg', 'property'],
       ['og:image:width', '1200', 'property'],
       ['og:image:height', '630', 'property'],
-      ['og:image:alt', 'ZEROBYTE — software development company in Tbilisi, Georgia', 'property'],
+      ['og:image:alt', OG_IMAGE_ALT, 'property'],
       ['twitter:card', 'summary_large_image', 'name'],
       ['twitter:title', seo.title, 'name'],
       ['twitter:description', seo.description, 'name'],
       ['twitter:image', OG_IMAGE, 'name'],
+      ['twitter:image:alt', OG_IMAGE_ALT, 'name'],
     ];
     for (const [key, content, attr] of tags) {
       this.meta.updateTag({ [attr]: key, content }, `${attr}="${key}"`);

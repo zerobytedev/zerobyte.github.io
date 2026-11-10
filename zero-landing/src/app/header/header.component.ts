@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, PLATFORM_ID, DOCUMENT, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, PLATFORM_ID, DOCUMENT, NgZone, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -17,12 +17,24 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private readonly router = inject(Router);
   private readonly doc = inject(DOCUMENT);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private readonly zone = inject(NgZone);
+  private removeScroll?: () => void;
 
   ngOnInit(): void {
     // Prerendering runs on the server: no localStorage, no Bootstrap JS.
     if (!this.isBrowser) return;
 
     this.applyTheme(this.readTheme() === 'dark');
+
+    // Sticky header: the template styles nav.sticky-header.affix once the page has scrolled.
+    this.zone.runOutsideAngular(() => {
+      const onScroll = () => {
+        this.doc.querySelector('nav.sticky-header')?.classList.toggle('affix', window.scrollY >= 2);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      this.removeScroll = () => window.removeEventListener('scroll', onScroll);
+    });
 
     this.routerSub = this.router.events.pipe(
       filter(event => event instanceof NavigationStart)
@@ -37,6 +49,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.routerSub?.unsubscribe();
+    this.removeScroll?.();
   }
 
   toggleTheme(): void {

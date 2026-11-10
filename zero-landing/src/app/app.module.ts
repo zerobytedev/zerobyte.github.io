@@ -14,6 +14,7 @@ import { ServicesComponent } from './services/services.component';
 import { IntegrationsComponent } from './integrations/integrations.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { HeroStackComponent } from './home/hero-stack/hero-stack.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ContactComponent } from './contact/contact.component';
     ServicesComponent,
     IntegrationsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    HeroStackComponent
   ],
   imports: [
     BrowserModule,

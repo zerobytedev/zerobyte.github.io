@@ -1,21 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { IntegrationsComponent } from './integrations.component';
 
 describe('IntegrationsComponent', () => {
-  let component: IntegrationsComponent;
-  let fixture: ComponentFixture<IntegrationsComponent>;
-
-  beforeEach(() => {
+  it('lists the cloud providers we deploy to', () => {
     TestBed.configureTestingModule({
-      declarations: [IntegrationsComponent]
+      declarations: [IntegrationsComponent],
+      providers: [provideRouter([])],
+      schemas: [NO_ERRORS_SCHEMA],
     });
-    fixture = TestBed.createComponent(IntegrationsComponent);
-    component = fixture.componentInstance;
+    const fixture = TestBed.createComponent(IntegrationsComponent);
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    const names = Array.from((fixture.nativeElement as HTMLElement).querySelectorAll('.zb-tech-card h3'))
+      .map(h => h.textContent?.trim());
+    expect(names).toEqual(expect.arrayContaining(['AWS', 'Google Cloud', 'DigitalOcean', 'MongoDB Atlas']));
   });
 });
