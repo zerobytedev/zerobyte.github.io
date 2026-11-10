@@ -1,0 +1,34 @@
+# ZEROBYTE
+
+> ZEROBYTE is a software development company in Tbilisi, Georgia. We design, build and run web, mobile and cloud software end-to-end for startups and enterprises in Georgia and abroad — from discovery and UI/UX design to backend services, DevOps and post-launch support.
+
+Contact: info@zerobyte.ge (general), career@zerobyte.ge (careers). We reply within one business day. Engagements are fixed-price or time & materials; we also augment existing engineering teams.
+
+## Pages
+
+- [Home](https://zerobyte.ge/): services, process, selected work
+- [Technologies & Integrations](https://zerobyte.ge/integrations): the full stack we build and run on
+- [Contact](https://zerobyte.ge/contact): start a project
+
+## Services
+
+- Web development: Next.js, React, Angular, Vue.js, TypeScript
+- Mobile development: native Android (Kotlin, Jetpack Compose) and iOS (Swift, SwiftUI), React Native, Flutter
+- UI/UX design: research, wireframes, prototypes and design systems in Figma
+- Backend development: Kotlin and Spring Boot, Java, Node.js (NestJS), .NET; PostgreSQL, MongoDB Atlas, MySQL, Redis
+- DevOps & cloud: AWS, Google Cloud (Cloud Run, GKE, Cloud SQL, Pub/Sub, BigQuery), DigitalOcean (Droplets, App Platform, Spaces, Managed Databases), Azure, Firebase, Cloudflare, Vercel; Docker, Kubernetes, Helm, Terraform, GitHub Actions
+- QA & testing: unit, integration and end-to-end automation
+
+## Selected work
+
+- [Kursi.ge](https://kursi.ge): Georgia's online foreign exchange conversion platform. ZEROBYTE built and maintains the core web application and backend infrastructure.
+- [WiseWine](https://wisewine.ge): online shop for Georgian wines with same-day delivery in Tbilisi. Designed, built and hosted end-to-end by ZEROBYTE (Next.js storefront, catalogue admin, ordering backend, DigitalOcean).
+- [ArcticBlu Capital](https://arcticblucapital.com): digital-first asset management firm regulated by the National Bank of Georgia. ZEROBYTE built its technology platform and digital infrastructure.
+- [Feel Georgia](https://feelgeorgia.ge): guided and private tours across Tbilisi, Kazbegi, Svaneti and Kakheti. Designed, built and hosted end-to-end by ZEROBYTE (Next.js site, tour management, private-tour requests).
+
+## How we work
+
+1. Discovery & requirements
+2. Design & prototyping
+3. Development & QA in agile sprints with regular demos
+4. Launch, monitoring and ongoing support

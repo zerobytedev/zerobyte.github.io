@@ -4,12 +4,12 @@
   <nav class="navbar navbar-expand-xl navbar-dark sticky-header z-10">
     <div class="container d-flex align-items-center justify-content-lg-between position-relative">
       <a [routerLink]="['/']" fragment="home" class="navbar-brand d-flex align-items-center mb-md-0 text-decoration-none">
-        <img src="assets/img/zerobyte-light.png" alt="logo" class="img-fluid logo-white"/>
-        <img src="assets/img/zerobyte-dark.png" alt="logo" class="img-fluid logo-color"/>
+        <img src="assets/img/zerobyte-light.png" alt="ZEROBYTE" class="img-fluid logo-white" width="236" height="32">
+        <img src="assets/img/zerobyte-dark.png" alt="ZEROBYTE" class="img-fluid logo-color" width="236" height="32">
       </a>
       <a class="navbar-toggler position-absolute right-0 border-0"
          data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop"
-         aria-controls="offcanvasWithBackdrop" role="button">
+         aria-controls="offcanvasWithBackdrop" role="button" aria-label="Open menu" href="javascript:void(0)">
         <i class="flaticon-menu"></i>
       </a>
       <div class="clearfix"></div>
@@ -17,7 +17,7 @@
         <app-menu></app-menu>
       </div>
       <div class="action-btns text-end me-5 me-lg-0 d-none d-md-block d-lg-block">
-        <a href="javascript:void(0)" class="btn btn-link p-1 tt-theme-toggle" (click)="toggleTheme()">
+        <a href="javascript:void(0)" class="btn btn-link p-1 tt-theme-toggle" aria-label="Toggle dark mode" (click)="toggleTheme()">
           <div class="tt-theme-light"><i class="flaticon-sun-1 fs-lg"></i></div>
           <div class="tt-theme-dark"><i class="flaticon-moon-1 fs-lg"></i></div>
         </a>
@@ -28,7 +28,7 @@
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithBackdrop">
     <div class="offcanvas-header d-flex align-items-center mt-4">
       <a [routerLink]="['/']" fragment="home" class="d-flex align-items-center mb-md-0 text-decoration-none">
-        <img src="assets/img/zerobyte-dark.png" alt="logo" class="img-fluid ps-2"/>
+        <img src="assets/img/zerobyte-dark.png" alt="ZEROBYTE" class="img-fluid ps-2" width="236" height="32" loading="lazy">
       </a>
       <button type="button" class="close-btn text-danger" data-bs-dismiss="offcanvas" aria-label="Close">
         <i class="flaticon-cancel"></i>

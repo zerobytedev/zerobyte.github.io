@@ -1,4 +1,3 @@
-<app-preloader></app-preloader>
 
 <!--main content wrapper start-->
 <div class="main-wrapper">
@@ -6,46 +5,36 @@
   <app-header></app-header>
 
   <!--hero section start-->
-  <section id="home" class="hero-section ptb-120 text-white bg-gradient"
-    style="background: url('assets/img/hero-dot-bg.png')no-repeat center right">
+  <section id="home" class="hero-section zb-hero ptb-120 text-white bg-gradient">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 col-md-10">
-          <div class="hero-content-wrap mt-5 mt-lg-0 mt-xl-0">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-5 col-md-10">
+          <div class="hero-content-wrap mt-5 mt-lg-0">
+            <p class="zb-eyebrow">Software development company · Tbilisi, Georgia</p>
             <h1 class="fw-bold display-5">End-to-End Digital Transformation</h1>
             <p class="lead">We design, build and deliver custom software that moves your business forward — from
               web and mobile apps to DevOps infrastructure and everything in between.</p>
-            <div class="action-btn mt-5 d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3">
+            <div class="action-btn mt-5 d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-3">
               <a routerLink="/contact" class="btn btn-primary">Start Your Project</a>
-              <a [routerLink]="['/']" fragment="services" class="btn btn-outline-light">Explore Services</a>
+              <a [routerLink]="['/']" fragment="work" class="btn btn-outline-light">See Our Work</a>
             </div>
           </div>
         </div>
-        <div class="col-lg-6 col-md-8 mt-5">
-          <div class="hero-img position-relative circle-shape-images">
-            <!--animated shape start-->
-            <ul class="position-absolute animate-element parallax-element circle-shape-list">
-              <li class="layer" data-depth="0.03">
-                <img src="assets/img/shape/circle-1.svg" alt="shape" class="circle-shape-item type-0 hero-1">
-              </li>
-              <li class="layer" data-depth="0.02">
-                <img src="assets/img/shape/circle-1.svg" alt="shape" class="circle-shape-item type-1 hero-1">
-              </li>
-              <li class="layer" data-depth="0.04">
-                <img src="assets/img/shape/circle-1.svg" alt="shape" class="circle-shape-item type-2 hero-1">
-              </li>
-              <li class="layer" data-depth="0.04">
-                <img src="assets/img/shape/circle-1.svg" alt="shape" class="circle-shape-item type-3 hero-1">
-              </li>
-              <li class="layer" data-depth="0.03">
-                <img src="assets/img/shape/circle-1.svg" alt="shape" class="circle-shape-item type-4 hero-1">
-              </li>
-              <li class="layer" data-depth="0.03">
-                <img src="assets/img/shape/circle-1.svg" alt="shape" class="circle-shape-item type-5 hero-1">
-              </li>
-            </ul>
-            <!--animated shape end-->
-            <img src="assets/img/hero-1.png" alt="hero img" class="img-fluid position-relative z-5">
+        <div class="col-lg-7">
+          <!--live products we built: Kursi.ge in front, WiseWine and ArcticBlu Capital behind-->
+          <div class="zb-stack" aria-hidden="true">
+            <figure class="zb-browser zb-stack-back">
+              <div class="zb-browser-bar"><span></span><span></span><span></span><em>arcticblucapital.com</em></div>
+              <img src="assets/img/work/arcticblu.webp" srcset="assets/img/work/arcticblu-600.webp 600w, assets/img/work/arcticblu.webp 1200w" sizes="(min-width: 992px) 46vw, 100vw" alt="" width="1200" height="750" decoding="async">
+            </figure>
+            <figure class="zb-browser zb-stack-mid">
+              <div class="zb-browser-bar"><span></span><span></span><span></span><em>wisewine.ge</em></div>
+              <img src="assets/img/work/wisewine.webp" srcset="assets/img/work/wisewine-600.webp 600w, assets/img/work/wisewine.webp 1200w" sizes="(min-width: 992px) 46vw, 100vw" alt="" width="1200" height="750" decoding="async">
+            </figure>
+            <figure class="zb-browser zb-stack-front">
+              <div class="zb-browser-bar"><span></span><span></span><span></span><em>kursi.ge</em></div>
+              <img src="assets/img/work/kursi.webp" srcset="assets/img/work/kursi-600.webp 600w, assets/img/work/kursi.webp 1200w" sizes="(min-width: 992px) 46vw, 100vw" alt="" width="1200" height="750" fetchpriority="high">
+            </figure>
           </div>
         </div>
       </div>
@@ -107,28 +96,22 @@
         <div class="col-lg-6 mt-4">
           <div class="position-relative d-flex flex-column h-100 flex-wrap bg-danger-soft p-5 rounded-custom">
             <div class="cta-left-info mb-2">
-              <h5>Have an idea? Let's talk.</h5>
+              <h3 class="h5">Have an idea? Let's talk.</h3>
               <p>Tell us what you're building and we'll help you shape the right solution from day one.</p>
             </div>
             <div class="mt-auto">
               <a routerLink="/contact" class="btn btn-outline-primary btn-sm">Get in Touch</a>
-            </div>
-            <div class="cta-img position-absolute right-0 bottom-0">
-              <img src="assets/img/cta-img-1.png" alt="cta img" class="img-fluid">
             </div>
           </div>
         </div>
         <div class="col-lg-6 mt-4">
           <div class="position-relative d-flex flex-column h-100 flex-wrap bg-primary-soft p-5 rounded-custom">
             <div class="cta-left-info mb-2">
-              <h5>Already have a team? We can help.</h5>
+              <h3 class="h5">Already have a team? We can help.</h3>
               <p>We augment existing engineering teams with senior talent in any stack, any timezone.</p>
             </div>
             <div class="mt-auto">
               <a routerLink="/contact" class="btn btn-outline-primary btn-sm">Let's Collaborate</a>
-            </div>
-            <div class="cta-img position-absolute right-0 bottom-0">
-              <img src="assets/img/cta-img-2.png" alt="cta img" class="img-fluid">
             </div>
           </div>
         </div>
@@ -143,7 +126,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-10">
           <div class="section-heading text-center">
-            <h4 class="h5 text-primary">What We Do</h4>
+            <p class="h5 text-primary">What We Do</p>
             <h2>Services We Provide</h2>
             <p>From concept to deployment, we cover the full software development lifecycle so your team can focus
               on the business.</p>
@@ -154,7 +137,7 @@
         <div class="col-lg-4 col-md-6 p-0">
           <div class="single-service p-lg-5 p-4 text-center mt-3 border-bottom border-end">
             <div class="service-icon icon-center">
-              <img src="assets/img/service/coding.png" alt="web development" width="65" height="65"/>
+              <img src="assets/img/service/coding.webp" alt="" width="56" height="56" loading="lazy">
             </div>
             <div class="service-info-wrap">
               <h3 class="h5">Web Development</h3>
@@ -166,7 +149,7 @@
         <div class="col-lg-4 col-md-6 p-0">
           <div class="single-service p-lg-5 p-4 text-center mt-3 border-bottom border-end">
             <div class="service-icon icon-center">
-              <img src="assets/img/service/app-development.png" alt="mobile development" width="65" height="65"/>
+              <img src="assets/img/service/app-development.webp" alt="" width="56" height="56" loading="lazy">
             </div>
             <div class="service-info-wrap">
               <h3 class="h5">Mobile Development</h3>
@@ -178,7 +161,7 @@
         <div class="col-lg-4 col-md-6 p-0">
           <div class="single-service p-lg-5 p-4 text-center mt-3 border-bottom">
             <div class="service-icon icon-center">
-              <img src="assets/img/service/curve.png" alt="ui ux design" width="65" height="65"/>
+              <img src="assets/img/service/curve.webp" alt="" width="56" height="56" loading="lazy">
             </div>
             <div class="service-info-wrap">
               <h3 class="h5">UI/UX Design</h3>
@@ -190,7 +173,7 @@
         <div class="col-lg-4 col-md-6 p-0">
           <div class="single-service p-lg-5 p-4 text-center border-end">
             <div class="service-icon icon-center">
-              <img src="assets/img/service/shield.png" alt="qa testing" width="65" height="65"/>
+              <img src="assets/img/service/shield.webp" alt="" width="56" height="56" loading="lazy">
             </div>
             <div class="service-info-wrap">
               <h3 class="h5">QA & Testing</h3>
@@ -206,8 +189,8 @@
             </div>
             <div class="service-info-wrap">
               <h3 class="h5">Backend Development</h3>
-              <p>Reliable APIs and microservices built on Node.js, Spring Boot, or Kotlin — designed for performance
-                and maintainability.</p>
+              <p>Reliable APIs and microservices built on Kotlin, Spring Boot or Node.js, backed by PostgreSQL and
+                MongoDB Atlas — designed for performance and maintainability.</p>
             </div>
           </div>
         </div>
@@ -218,8 +201,8 @@
             </div>
             <div class="service-info-wrap">
               <h3 class="h5">DevOps & Cloud</h3>
-              <p>CI/CD pipelines, containerization, and cloud infrastructure on AWS, GCP, or Azure — built to
-                automate and scale.</p>
+              <p>CI/CD pipelines, containers and Terraform-managed infrastructure on AWS, Google Cloud and
+                DigitalOcean — built to automate and scale.</p>
             </div>
           </div>
         </div>
@@ -255,7 +238,7 @@
         </div>
         <div class="col-lg-6 col-12">
           <div class="feature-img-holder mt-4 mt-lg-0 mt-xl-0">
-            <img src="assets/img/tbilisi-cityscape.jpg" class="img-fluid rounded-custom" alt="Tbilisi, Georgia">
+            <img src="assets/img/tbilisi-cityscape.webp" class="img-fluid rounded-custom" alt="Tbilisi skyline, home of ZEROBYTE" width="1000" height="1333" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -269,7 +252,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-10">
           <div class="section-heading text-center">
-            <h4 class="h5 text-primary">How We Work</h4>
+            <p class="h5 text-primary">How We Work</p>
             <h2>From Idea to Launch — Our Process</h2>
             <p>A structured, iterative approach that keeps you informed and in control at every stage.</p>
           </div>
@@ -278,7 +261,7 @@
       <div class="row align-items-center justify-content-between">
         <div class="col-lg-5 col-md-12 order-1 order-lg-0">
           <div class="img-wrap">
-            <img src="assets/img/office-img-1.jpg" alt="team working" class="img-fluid rounded-custom">
+            <img src="assets/img/office-team.webp" alt="The ZEROBYTE team at work" class="img-fluid rounded-custom" width="900" height="1353" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="col-lg-6 col-md-12 order-0 order-lg-1">
@@ -349,8 +332,8 @@
         <div class="col-md-6 col-lg-3">
           <div class="promo-card-wrap promo-border-hover border border-2 border-light rounded-custom p-5 mb-4 mb-lg-0 mb-md-4 text-center">
             <div class="promo-card-info">
-              <h3 class="display-5 fw-medium mb-4 text-white">50+</h3>
-              <h2 class="h5 text-white">Projects Delivered</h2>
+              <p class="display-5 fw-medium mb-4 text-white">50+</p>
+              <h3 class="h5 text-white">Projects Delivered</h3>
               <p class="mb-0 text-white-75">Across fintech, e-commerce, edtech, and more.</p>
             </div>
           </div>
@@ -358,8 +341,8 @@
         <div class="col-md-6 col-lg-3">
           <div class="promo-card-wrap promo-border-hover border border-2 border-light rounded-custom p-5 mb-4 mb-lg-0 mb-md-4 text-center">
             <div class="promo-card-info">
-              <h3 class="display-5 fw-medium mb-4 text-white">30+</h3>
-              <h2 class="h5 text-white">Happy Clients</h2>
+              <p class="display-5 fw-medium mb-4 text-white">30+</p>
+              <h3 class="h5 text-white">Happy Clients</h3>
               <p class="mb-0 text-white-75">From Georgian startups to international enterprises.</p>
             </div>
           </div>
@@ -367,8 +350,8 @@
         <div class="col-md-6 col-lg-3">
           <div class="promo-card-wrap promo-border-hover border border-2 border-light rounded-custom p-5 mb-4 mb-lg-0 mb-md-0 text-center">
             <div class="promo-card-info">
-              <h3 class="display-5 fw-medium mb-4 text-white">2+</h3>
-              <h2 class="h5 text-white">Years Active</h2>
+              <p class="display-5 fw-medium mb-4 text-white">2+</p>
+              <h3 class="h5 text-white">Years Active</h3>
               <p class="mb-0 text-white-75">Building software for the Georgian tech ecosystem.</p>
             </div>
           </div>
@@ -376,8 +359,8 @@
         <div class="col-md-6 col-lg-3">
           <div class="promo-card-wrap promo-border-hover border border-2 border-light rounded-custom p-5 mb-4 mb-lg-0 mb-md-0 text-center">
             <div class="promo-card-info">
-              <h3 class="display-5 fw-medium mb-4 text-white">100%</h3>
-              <h2 class="h5 text-white">On-time Delivery</h2>
+              <p class="display-5 fw-medium mb-4 text-white">100%</p>
+              <h3 class="h5 text-white">On-time Delivery</h3>
               <p class="mb-0 text-white-75">We respect deadlines as much as we respect code quality.</p>
             </div>
           </div>
@@ -387,66 +370,75 @@
   </section>
   <!--stats section end-->
 
-  <!--trusted by section start-->
-  <section class="customer-section ptb-120">
+  <!--work section start-->
+  <section id="work" class="customer-section ptb-120">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-7 col-md-10">
           <div class="section-heading text-center">
-            <h4 class="h5 text-primary">Trusted By</h4>
-            <h2>Companies That Rely on Us</h2>
-            <p>We build long-term partnerships with our clients — from initial build to ongoing feature
-              development and everything in between.</p>
+            <p class="h5 text-primary">Our Work</p>
+            <h2>Products We've Built</h2>
+            <p>Live products we designed, engineered and keep running — from e-commerce and travel to fintech
+              and asset management.</p>
           </div>
         </div>
       </div>
       <div class="row justify-content-center g-4 mt-3 align-items-stretch">
-
-        <!--Kursi.ge card-->
         <div class="col-lg-5 col-md-6 d-flex">
-          <a href="https://kursi.ge" target="_blank" rel="noopener noreferrer"
-            class="d-flex flex-column text-decoration-none rounded-custom overflow-hidden w-100"
-            style="border: 2px solid #e5e7eb;">
-            <div class="d-flex align-items-center justify-content-center bg-white px-5"
-              style="height: 200px;">
-              <img src="assets/img/clients/kursi-ge-logo.svg" alt="Kursi.ge" class="img-fluid"
-                style="max-height: 80px; max-width: 220px;">
+          <a href="https://kursi.ge" target="_blank" rel="noopener" class="zb-work-card">
+            <div class="zb-work-logo">
+              <img src="assets/img/clients/kursi-ge-logo.svg" alt="Kursi.ge" width="220" height="80" loading="lazy">
             </div>
-            <div class="px-5 py-4 flex-grow-1"
-              style="background: #1e293b; border-top: 2px solid #334155;">
-              <p class="fw-semibold mb-1" style="color: #f1f5f9;">Kursi.ge</p>
-              <p class="mb-2 small" style="color: #94a3b8;">Online FX Conversion · Georgia</p>
-              <p class="mb-0 small" style="color: #cbd5e1;">Georgia's online foreign exchange conversion platform — we built and
-                maintain their core web application and backend infrastructure.</p>
+            <div class="zb-work-body">
+              <h3 class="h6 zb-work-name">Kursi.ge</h3>
+              <p class="zb-work-sector">Online FX Conversion · Georgia</p>
+              <p class="zb-work-desc">Georgia's online foreign exchange conversion platform — we built and maintain their core web application and backend infrastructure.</p>
+              <ul class="zb-work-stack" aria-label="Technologies"><li>Web app</li><li>Backend</li><li>Fintech</li></ul>
             </div>
           </a>
         </div>
 
-        <!--ArcticBlu Capital card-->
         <div class="col-lg-5 col-md-6 d-flex">
-          <a href="https://arcticblucapital.com" target="_blank" rel="noopener noreferrer"
-            class="d-flex flex-column text-decoration-none rounded-custom overflow-hidden w-100"
-            style="border: 2px solid #e5e7eb;">
-            <div class="d-flex align-items-center justify-content-center px-5"
-              style="height: 200px; background: linear-gradient(135deg, #020554 0%, #0a0f7a 100%);">
-              <div class="text-center">
-                <div class="fw-bold lh-1"
-                  style="font-size: 2rem; color: #ffffff; letter-spacing: -0.02em;">
-                  ArcticBlu
-                </div>
-                <div class="mt-1"
-                  style="font-size: 0.75rem; letter-spacing: 4px; color: #90E0F7; font-weight: 400; text-transform: uppercase;">
-                  CAPITAL
-                </div>
+          <a href="https://wisewine.ge" target="_blank" rel="noopener" class="zb-work-card">
+            <div class="zb-work-logo zb-work-logo--wisewine">
+              <img src="assets/img/clients/wisewine-logo.webp" alt="WiseWine" width="241" height="126" loading="lazy">
+            </div>
+            <div class="zb-work-body">
+              <h3 class="h6 zb-work-name">WiseWine</h3>
+              <p class="zb-work-sector">Wine E-commerce · Tbilisi</p>
+              <p class="zb-work-desc">An online shop for Georgian wines with same-day delivery. We designed, built and host the whole product — storefront, catalogue admin and ordering backend.</p>
+              <ul class="zb-work-stack" aria-label="Technologies"><li>Next.js</li><li>DigitalOcean</li><li>UI/UX</li></ul>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-5 col-md-6 d-flex">
+          <a href="https://arcticblucapital.com" target="_blank" rel="noopener" class="zb-work-card">
+            <div class="zb-work-logo zb-work-logo--arcticblu">
+              <div class="zb-wordmark-arcticblu">
+                <span>ArcticBlu</span>
+                <small>Capital</small>
               </div>
             </div>
-            <div class="px-5 py-4 flex-grow-1"
-              style="background: #1e293b; border-top: 2px solid #334155;">
-              <p class="fw-semibold mb-1" style="color: #f1f5f9;">ArcticBlu Capital</p>
-              <p class="mb-2 small" style="color: #94a3b8;">Asset Management · Regulated by NBG</p>
-              <p class="mb-0 small" style="color: #cbd5e1;">A digital-first asset management firm delivering
-                institutional-grade, actively managed portfolios across global equities and fixed income — we built
-                their technology platform and digital infrastructure.</p>
+            <div class="zb-work-body">
+              <h3 class="h6 zb-work-name">ArcticBlu Capital</h3>
+              <p class="zb-work-sector">Asset Management · Regulated by NBG</p>
+              <p class="zb-work-desc">A digital-first asset management firm delivering institutional-grade, actively managed portfolios across global equities and fixed income — we built their technology platform and digital infrastructure.</p>
+              <ul class="zb-work-stack" aria-label="Technologies"><li>Platform</li><li>Infrastructure</li><li>Fintech</li></ul>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-5 col-md-6 d-flex">
+          <a href="https://feelgeorgia.ge" target="_blank" rel="noopener" class="zb-work-card">
+            <div class="zb-work-logo zb-work-logo--feelgeorgia">
+              <img src="assets/img/clients/feelgeorgia-logo.webp" alt="Feel Georgia" width="181" height="64" loading="lazy">
+            </div>
+            <div class="zb-work-body">
+              <h3 class="h6 zb-work-name">Feel Georgia</h3>
+              <p class="zb-work-sector">Guided &amp; Private Tours · Georgia</p>
+              <p class="zb-work-desc">Day-by-day tours through Tbilisi, Kazbegi, Svaneti and Kakheti. We designed, built and host the site, the tour management and the private-tour request flow.</p>
+              <ul class="zb-work-stack" aria-label="Technologies"><li>Next.js</li><li>Tour admin</li><li>UI/UX</li></ul>
             </div>
           </a>
         </div>
@@ -454,7 +446,7 @@
       </div>
     </div>
   </section>
-  <!--trusted by section end-->
+  <!--work section end-->
 
   <!--cta section start-->
   <section class="cta-subscribe bg-dark ptb-120 position-relative overflow-hidden">
@@ -463,7 +455,7 @@
         <div class="col-lg-7 col-md-8">
           <div class="subscribe-info-wrap text-center position-relative z-2">
             <div class="section-heading">
-              <h4 class="h5 text-warning">Ready to Build?</h4>
+              <p class="h5 text-warning">Ready to Build?</p>
               <h2 class="text-white">Let's Turn Your Idea Into Software</h2>
               <p class="text-white">Tell us what you're working on — we'll respond within one business day with
                 a plan to move forward.</p>
@@ -484,8 +476,6 @@
         </div>
       </div>
     </div>
-    <div class="bg-circle rounded-circle circle-shape-3 position-absolute bg-dark-light right-5"></div>
-    <div class="bg-circle rounded-circle circle-shape-1 position-absolute bg-dark-light left-5"></div>
   </section>
   <!--cta section end-->
 

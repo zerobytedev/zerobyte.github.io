@@ -8,16 +8,12 @@
         <div class="col-md-8 col-lg-4 mb-md-4 mb-lg-0">
           <div class="footer-single-col">
             <div class="footer-single-col mb-4">
-              <img src="assets/img/zerobyte-light.png" alt="logo" class="img-fluid logo-white">
-              <img src="assets/img/zerobyte-dark.png" alt="logo" class="img-fluid logo-color">
+              <img src="assets/img/zerobyte-light.png" alt="ZEROBYTE" class="img-fluid logo-white" width="236" height="32" loading="lazy">
+              <img src="assets/img/zerobyte-dark.png" alt="ZEROBYTE" class="img-fluid logo-color" width="236" height="32" loading="lazy">
             </div>
-            <p>Our latest news, articles, and resources, we will send to
-              your inbox weekly.</p>
-
-            <form class="newsletter-form position-relative d-block d-lg-flex d-md-flex">
-              <input type="text" class="input-newsletter form-control me-2" placeholder="Enter your email" name="email" required="" autocomplete="off">
-              <input type="submit" value="Subscribe" data-wait="Please wait..." class="btn btn-primary mt-3 mt-lg-0 mt-md-0">
-            </form>
+            <p>Software development company in Tbilisi, Georgia. We design, build and run web, mobile and cloud
+              products for startups and enterprises.</p>
+            <a href="mailto:info@zerobyte.ge" class="zb-footer-mail">info&#64;zerobyte.ge</a>
           </div>
         </div>
         <div class="col-md-12 col-lg-7 mt-4 mt-md-0 mt-lg-0">
@@ -28,6 +24,8 @@
                 <ul class="list-unstyled footer-nav-list mb-lg-0">
                   <li><a [routerLink]="['/']" fragment="home" class="text-decoration-none">Home</a></li>
                   <li><a [routerLink]="['/']" fragment="services" class="text-decoration-none">Services</a></li>
+                  <li><a [routerLink]="['/']" fragment="work" class="text-decoration-none">Work</a></li>
+                  <li><a routerLink="/integrations" class="text-decoration-none">Integrations</a></li>
                   <li><a [routerLink]="['/']" fragment="about" class="text-decoration-none">About Us</a></li>
                   <li><a routerLink="/contact" class="text-decoration-none">Contact Us</a></li>
                 </ul>
@@ -65,15 +63,15 @@
       <div class="row justify-content-between align-items-center">
         <div class="col-md-7 col-lg-7">
           <div class="copyright-text">
-            <p class="mb-lg-0 mb-md-0">&copy; 2023 ZEROBYTE Rights Reserved.</p>
+            <p class="mb-lg-0 mb-md-0">&copy; {{ year }} ZEROBYTE. All rights reserved.</p>
           </div>
         </div>
         <div class="col-md-4 col-lg-4">
           <div class="footer-single-col text-start text-lg-end text-md-end">
             <ul class="list-unstyled list-inline footer-social-list mb-0">
-              <li class="list-inline-item"><a href="https://www.facebook.com/zerobytedev/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-              <li class="list-inline-item"><a href="https://github.com/zerobytedev" target="_blank"><i class="fab fa-github"></i></a></li>
-              <li class="list-inline-item"><a href="https://www.linkedin.com/company/zerobytedev" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.facebook.com/zerobytedev/" target="_blank" rel="noopener" aria-label="ZEROBYTE on Facebook"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="list-inline-item"><a href="https://github.com/zerobytedev" target="_blank" rel="noopener" aria-label="ZEROBYTE on GitHub"><i class="fab fa-github"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.linkedin.com/company/zerobytedev" target="_blank" rel="noopener" aria-label="ZEROBYTE on LinkedIn"><i class="fab fa-linkedin"></i></a></li>
             </ul>
           </div>
         </div>

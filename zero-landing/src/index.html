@@ -2,75 +2,106 @@
 <html lang="en" data-bs-theme="light">
 
 <head>
-  <!--required meta tags-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
 
-  <!--twitter og-->
-  <meta name="twitter:site" content="@themetags">
-  <meta name="twitter:creator" content="@themetags">
+  <!--title, description, canonical and Open Graph tags are set per route by SeoService at prerender time-->
+  <title>ZEROBYTE — Software Development Company in Tbilisi, Georgia</title>
+  <meta name="description" content="ZEROBYTE designs, builds and runs web, mobile and cloud software for startups and enterprises in Georgia and abroad.">
+  <meta name="author" content="ZEROBYTE">
+  <meta name="theme-color" content="#0b163f">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ZEROBYTE - Creative Software & IT Solutions agency landing page.">
-  <meta name="twitter:description"
-        content="ZEROBYTE creative software technology, agency & business landing. It is best and famous software company.">
-  <meta name="twitter:image" content="#">
+  <meta property="og:locale" content="en_US">
 
-  <!--facebook og-->
-  <meta property="og:url" content="#">
-  <meta name="twitter:title" content="ZEROBYTE - Creative Software & IT Solutions agency landing page.">
-  <meta property="og:description"
-        content="ZEROBYTE creative software technology, agency & business landing. It is best and famous software company.">
-  <meta property="og:image" content="#">
-  <meta property="og:image:secure_url" content="#">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="600">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM summary" href="/llms.txt">
 
-  <!--meta-->
-  <meta name="description" content="ZEROBYTE creative software technology, agency & business landing. It is best and famous software company.">
-  <meta name="author" content="ThemeTags">
+  <script>
+    // Old hash-routed links (zerobyte.ge/#/contact) now live at real paths (zerobyte.ge/contact).
+    (function (l) {
+      if (l.hash.indexOf('#/') === 0) l.replace('/' + l.hash.slice(2).replace(/^\/+/, ''));
+    }(window.location));
+    // Apply the saved theme before first paint so dark-mode visitors don't see a light flash.
+    try {
+      if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-bs-theme', 'dark');
+    } catch (e) {}
+  </script>
 
-  <!--favicon icon-->
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg" sizes="16x16">
+  <link rel="stylesheet" href="assets/css/main.css" data-beasties-skip>
+  <link rel="stylesheet" href="assets/css/custom.css" data-beasties-skip>
 
-  <!--title-->
-  <title>ZEROBYTE - Software & IT Solutions</title>
-
-  <!--build:css-->
-  <link rel="stylesheet" href="assets/css/main.css">
-  <!-- endbuild -->
-
-  <!--custom css start-->
-  <link rel="stylesheet" href="assets/css/custom.css">
-  <!--custom css end-->
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://zerobyte.ge/#org",
+        "name": "ZEROBYTE",
+        "url": "https://zerobyte.ge/",
+        "logo": "https://zerobyte.ge/assets/img/zerobyte-dark.png",
+        "image": "https://zerobyte.ge/assets/img/og-zerobyte.png",
+        "description": "Software development company in Tbilisi, Georgia. We design, build and run web, mobile and cloud software end-to-end: UI/UX design, web and mobile apps, backend services, QA, DevOps and cloud infrastructure.",
+        "email": "info@zerobyte.ge",
+        "sameAs": ["https://www.linkedin.com/company/zerobytedev", "https://github.com/zerobytedev", "https://www.facebook.com/zerobytedev/"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tbilisi",
+          "addressCountry": "GE"
+        },
+        "areaServed": ["GE", "Worldwide"],
+        "knowsAbout": ["Web development", "Mobile app development", "UI/UX design", "Backend development", "DevOps", "Cloud infrastructure", "Next.js", "Angular", "React", "Kotlin", "Spring Boot", "Node.js", "AWS", "Google Cloud", "DigitalOcean", "MongoDB Atlas", "PostgreSQL", "Kubernetes", "Terraform"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Software development services",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web Development"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mobile Development"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "UI/UX Design"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "QA & Testing"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Backend Development"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "DevOps & Cloud"}}
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://zerobyte.ge/#website",
+        "url": "https://zerobyte.ge/",
+        "name": "ZEROBYTE",
+        "inLanguage": "en",
+        "publisher": {"@id": "https://zerobyte.ge/#org"}
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://zerobyte.ge/#work",
+        "name": "Products built by ZEROBYTE",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "item": {"@type": "CreativeWork", "name": "Kursi.ge", "url": "https://kursi.ge", "description": "Online foreign exchange conversion platform in Georgia. Web application and backend built and maintained by ZEROBYTE.", "creator": {"@id": "https://zerobyte.ge/#org"}}},
+          {"@type": "ListItem", "position": 2, "item": {"@type": "CreativeWork", "name": "WiseWine", "url": "https://wisewine.ge", "description": "Online shop for Georgian wines with same-day delivery in Tbilisi. Designed, built and hosted by ZEROBYTE.", "creator": {"@id": "https://zerobyte.ge/#org"}}},
+          {"@type": "ListItem", "position": 3, "item": {"@type": "CreativeWork", "name": "ArcticBlu Capital", "url": "https://arcticblucapital.com", "description": "Digital-first asset management firm regulated by the National Bank of Georgia. Technology platform built by ZEROBYTE.", "creator": {"@id": "https://zerobyte.ge/#org"}}},
+          {"@type": "ListItem", "position": 4, "item": {"@type": "CreativeWork", "name": "Feel Georgia", "url": "https://feelgeorgia.ge", "description": "Guided and private tours across Tbilisi, Kazbegi, Svaneti and Kakheti. Designed, built and hosted by ZEROBYTE.", "creator": {"@id": "https://zerobyte.ge/#org"}}}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
-<script>
-  // Single Page Apps for GitHub Pages — restore path from redirect
-  (function(l) {
-    if (l.search[1] === '/') {
-      var decoded = l.search.slice(1).split('&').map(function(s) {
-        return s.replace(/~and~/g, '&');
-      }).join('?');
-      window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-    }
-  }(window.location));
-</script>
 <body>
 
 <app-root></app-root>
 
-<!--build:js-->
-<script src="assets/js/vendors/jquery-3.6.0.min.js"></script>
-<script src="assets/js/vendors/bootstrap.bundle.min.js"></script>
-<script src="assets/js/vendors/swiper-bundle.min.js"></script>
-<script src="assets/js/vendors/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/vendors/parallax.min.js"></script>
-<script src="assets/js/vendors/aos.js"></script>
-<script src="assets/js/vendors/massonry.min.js"></script>
-<script src="assets/js/app.js"></script>
-<!--endbuild-->
+<script src="assets/js/vendors/jquery-3.6.0.min.js" defer></script>
+<script src="assets/js/vendors/bootstrap.bundle.min.js" defer></script>
+<script src="assets/js/vendors/swiper-bundle.min.js" defer></script>
+<script src="assets/js/vendors/jquery.magnific-popup.min.js" defer></script>
+<script src="assets/js/vendors/parallax.min.js" defer></script>
+<script src="assets/js/vendors/aos.js" defer></script>
+<script src="assets/js/vendors/massonry.min.js" defer></script>
+<script src="assets/js/app.js" defer></script>
 </body>
 
 </html>
