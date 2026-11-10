@@ -1,19 +1,42 @@
-<div class="zb-stack" role="group" aria-label="Products we built">
+<div class="zb-stack">
+  <!--desktop: browser window chrome; its tabs switch the page (click or keyboard only)-->
+  <div class="zb-window-bar">
+    <span class="zb-window-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+    <div class="zb-tabs" role="tablist" aria-label="Products we built" [class.is-measured]="indicator() !== null">
+      @if (indicator(); as ind) {
+        <span class="zb-tab-indicator" aria-hidden="true"
+              [style.transform]="'translateX(' + ind.x + 'px)'" [style.width.px]="ind.w"></span>
+      }
+      @for (site of sites; track site.id; let i = $index) {
+        <button #tab type="button" role="tab" class="zb-tab"
+                [id]="'zb-tab-' + site.id"
+                [attr.aria-selected]="active() === i"
+                [attr.aria-controls]="'zb-panel-' + site.id"
+                [attr.tabindex]="active() === i ? 0 : -1"
+                (click)="select(i)"
+                (keydown)="onTabKey($event, i)">
+          <span>{{ site.name }}</span>
+        </button>
+      }
+    </div>
+  </div>
+  <div class="zb-address" aria-hidden="true"><span>{{ sites[active()].host }}</span></div>
+
   <div class="zb-stack-row" #row>
     @for (site of sites; track site.id; let i = $index) {
       <a #frame
          class="zb-frame"
-         [class]="'pos-' + slot(i)"
-         [class.is-front]="isFront(i)"
+         [class.is-active]="active() === i"
+         [id]="'zb-panel-' + site.id"
+         role="tabpanel"
+         [attr.aria-labelledby]="'zb-tab-' + site.id"
          [href]="'#work-' + site.id"
          [attr.aria-label]="site.name + ' — see the project'"
-         (mouseenter)="hover(i)"
-         (focus)="bringToFront(i)"
          (click)="frameClick($event, i)">
         <span class="zb-browser-bar" aria-hidden="true"><span></span><span></span><span></span><em>{{ site.host }}</em></span>
         <img [src]="'assets/img/work/' + site.img + '.webp'"
              [srcset]="'assets/img/work/' + site.img + '-600.webp 600w, assets/img/work/' + site.img + '.webp 1200w'"
-             sizes="(min-width: 992px) 44vw, 86vw"
+             sizes="(min-width: 992px) 52vw, 86vw"
              [alt]="site.name + ' home page'"
              width="1200" height="750"
              [attr.fetchpriority]="i === 0 ? 'high' : null"
@@ -21,14 +44,6 @@
       </a>
     }
   </div>
-</div>
-
-<!--desktop: name chips; hover, focus or click brings that site forward-->
-<div class="zb-stack-chips" role="group" aria-label="Show a product">
-  @for (site of sites; track site.id; let i = $index) {
-    <button type="button" class="zb-chip" [attr.aria-pressed]="isFront(i)"
-            (mouseenter)="hover(i)" (focus)="bringToFront(i)" (click)="bringToFront(i)">{{ site.name }}</button>
-  }
 </div>
 
 <!--phone: position dots for the swipe row-->

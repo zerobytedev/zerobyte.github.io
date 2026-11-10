@@ -67,42 +67,80 @@ h1, .h1, h2, .h2 { letter-spacing: -0.02em; }
 
 app-hero-stack { display: block; }
 
-/* Desktop: overlapping frames fanned up and to the right; every frame's bar and a strip of its page stay visible.
-   Sizes are in cqw (container width) so the fan scales with the column. Frame height = width x 0.625 + 30px bar. */
-.zb-stack { position: relative; container-type: inline-size; margin-top: 2rem; }
-.zb-stack-row { position: relative; aspect-ratio: 16 / 12; }
-
-.zb-frame {
-  position: absolute;
-  display: block;
-  border-radius: var(--zb-radius-sm);
+/* Desktop: one browser window. Its tabs switch the page: click or keyboard only, a 200 ms crossfade,
+   one sliding tab indicator (240 ms). Nothing reacts to hover except text colour. */
+.zb-stack {
+  --zb-chrome: #0b1220;
+  --zb-chrome-active: #1a2540;
+  margin-top: 2rem;
+  border-radius: 12px;
   overflow: hidden;
-  background: #0b1220;
+  background: var(--zb-chrome);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.45);
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    left 0.6s var(--zb-ease), top 0.6s var(--zb-ease), width 0.6s var(--zb-ease),
-    opacity 0.6s var(--zb-ease), box-shadow 0.6s var(--zb-ease), z-index 0s 0.15s;
+  box-shadow: 0 30px 70px rgba(2, 6, 23, 0.5);
 }
+
+.zb-window-bar { display: flex; align-items: flex-end; gap: 14px; height: 44px; padding: 0 10px 0 14px; }
+.zb-window-dots { display: flex; gap: 6px; align-self: center; flex: none; }
+.zb-window-dots span, .zb-browser-bar > span { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); }
+
+.zb-tabs { position: relative; display: flex; gap: 2px; flex: 1; min-width: 0; height: 36px; align-items: flex-end; }
+.zb-tab {
+  position: relative; z-index: 1;
+  flex: 0 1 172px; min-width: 0; height: 34px;
+  padding: 0 14px;
+  border: 0; border-radius: 9px 9px 0 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px; font-weight: 500; line-height: 34px; text-align: left;
+  transition: color 0.15s;
+}
+.zb-tab span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.zb-tab:hover { color: rgba(255, 255, 255, 0.88); }
+.zb-tab[aria-selected="true"] { color: #ffffff; }
+.zb-tab:focus-visible { outline: 2px solid #ffffff; outline-offset: -4px; }
+/* Before the indicator is measured (prerendered HTML), the selected tab paints its own background. */
+.zb-tabs:not(.is-measured) .zb-tab[aria-selected="true"] { background: var(--zb-chrome-active); }
+.zb-tab-indicator {
+  position: absolute; left: 0; bottom: 0; z-index: 0;
+  height: 34px;
+  border-radius: 9px 9px 0 0;
+  background: var(--zb-chrome-active);
+  transition: transform 240ms var(--zb-ease), width 240ms var(--zb-ease);
+}
+
+.zb-address { display: flex; align-items: center; height: 38px; padding: 0 12px; background: var(--zb-chrome-active); border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+.zb-address span {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; height: 26px; padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.25);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+}
+.zb-address span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #34d399; }
+
+.zb-stack-row { display: grid; }
+.zb-frame {
+  grid-area: 1 / 1;
+  display: block;
+  color: inherit; text-decoration: none; cursor: pointer;
+  opacity: 0; visibility: hidden;
+  transition: opacity 200ms ease-out, visibility 0s linear 200ms;
+}
+.zb-frame.is-active { opacity: 1; visibility: visible; z-index: 1; transition: opacity 200ms ease-out, visibility 0s; }
 .zb-frame img { display: block; width: 100%; height: auto; }
-.zb-frame:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+.zb-frame:focus-visible { outline: 2px solid #ffffff; outline-offset: -4px; }
+.zb-frame .zb-browser-bar { display: none; }
 
-.zb-frame.pos-0 { left: 0;      top: calc(30cqw - 30px);  width: 72cqw; z-index: 4; }
-.zb-frame.pos-1 { left: 13cqw;  top: calc(21cqw - 30px);  width: 66cqw; z-index: 3; opacity: 0.94; }
-.zb-frame.pos-2 { left: 24cqw;  top: calc(12.5cqw - 30px); width: 61cqw; z-index: 2; opacity: 0.86; }
-.zb-frame.pos-3 { left: 34cqw;  top: calc(4cqw - 30px);   width: 56cqw; z-index: 1; opacity: 0.78; }
-.zb-frame.pos-0 { box-shadow: 0 30px 70px rgba(2, 6, 23, 0.55); }
-
+/* Each frame's own small bar, used in the phone row. */
 .zb-browser-bar {
   display: flex; align-items: center; gap: 6px;
   height: 30px; padding: 0 12px;
   background: #111a2e;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-.zb-browser-bar span { width: 9px; height: 9px; border-radius: 50%; background: rgba(255, 255, 255, 0.22); }
+.zb-browser-bar > span { width: 9px; height: 9px; }
 .zb-browser-bar em {
   margin-left: 10px; font-style: normal; font-size: 11px; line-height: 18px;
   padding: 0 10px; border-radius: 6px;
@@ -110,27 +148,16 @@ app-hero-stack { display: block; }
   white-space: nowrap;
 }
 
-.zb-stack-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
-.zb-chip {
-  padding: 0.375rem 0.875rem;
-  font-size: 0.8125rem; font-weight: 500; line-height: 1.4;
-  color: rgba(255, 255, 255, 0.78);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-}
-.zb-chip:hover { color: #ffffff; border-color: rgba(255, 255, 255, 0.4); }
-.zb-chip[aria-pressed="true"] { color: #0b163f; background: #ffffff; border-color: #ffffff; }
-.zb-chip:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
-
 .zb-stack-dots { display: none; }
 
 /* Phone and tablet: a swipe row, the next frame peeking in; nothing moves on its own. */
 @media (max-width: 991.98px) {
-  .zb-stack { margin: 0 calc(var(--bs-gutter-x, 1.5rem) * -0.5); container-type: normal; }
+  .zb-stack {
+    margin: 0 calc(var(--bs-gutter-x, 1.5rem) * -0.5);
+    border: 0; border-radius: 0; background: none; box-shadow: none; overflow: visible;
+  }
+  .zb-window-bar, .zb-address { display: none; }
   .zb-stack-row {
-    aspect-ratio: auto;
     display: flex; gap: 12px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -140,14 +167,17 @@ app-hero-stack { display: block; }
     overscroll-behavior-x: contain;
   }
   .zb-stack-row::-webkit-scrollbar { display: none; }
-  .zb-frame, .zb-frame[class*="pos-"] {
-    position: relative; left: auto; top: auto; z-index: auto; opacity: 1;
-    flex: 0 0 86%; width: auto;
+  .zb-frame, .zb-frame.is-active {
+    flex: 0 0 86%;
+    opacity: 1; visibility: visible; transition: none;
     scroll-snap-align: start;
+    border-radius: var(--zb-radius-sm);
+    overflow: hidden;
+    background: #0b1220;
+    border: 1px solid rgba(255, 255, 255, 0.14);
     box-shadow: 0 16px 40px rgba(2, 6, 23, 0.45);
-    transition: none;
   }
-  .zb-stack-chips { display: none; }
+  .zb-frame .zb-browser-bar { display: flex; }
   .zb-stack-dots { display: flex; justify-content: center; gap: 4px; margin-top: 1rem; }
   .zb-dot {
     width: 28px; height: 28px; padding: 0;

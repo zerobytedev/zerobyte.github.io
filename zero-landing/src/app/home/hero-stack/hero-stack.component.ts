@@ -20,14 +20,11 @@ export const STACK_SITES: StackSite[] = [
   { id: 'feelgeorgia', host: 'feelgeorgia.ge', name: 'Feel Georgia', img: 'feelgeorgia' },
 ];
 
-/** How long a bring-to-front animation runs; hover is ignored meanwhile so frames sliding under a still pointer don't chain. */
-const SETTLE_MS = 650;
-
 /**
- * Hero stack of live client sites.
- * Desktop: overlapping browser frames; hovering a frame (or its chip) brings it to the front, the rest keep their order.
- * Phone: a native scroll-snap row with the next frame peeking in, plus position dots.
- * Clicking the front frame scrolls to that project's card in #work.
+ * Hero window of live client sites.
+ * Desktop: one browser window whose tabs switch the page (click or keyboard only; 200 ms crossfade).
+ * Phone: a native scroll-snap swipe row with the next site peeking in, plus position dots.
+ * Clicking the page scrolls to that project's card in #work.
  */
 @Component({
   selector: 'app-hero-stack',
@@ -37,47 +34,40 @@ const SETTLE_MS = 650;
 })
 export class HeroStackComponent implements AfterViewInit, OnDestroy {
   readonly sites = STACK_SITES;
-  /** order[0] is the front frame; values are indexes into `sites`. */
-  readonly order = signal<number[]>(STACK_SITES.map((_, i) => i));
+  /** Selected tab on desktop. */
+  readonly active = signal(0);
   /** Which frame is in view in the phone swipe row. */
   readonly visible = signal(0);
+  /** Sliding tab indicator, measured in the browser; null until measured (the selected tab paints itself). */
+  readonly indicator = signal<{ x: number; w: number } | null>(null);
 
   private readonly frames = viewChildren<ElementRef<HTMLElement>>('frame');
   private readonly row = viewChildren<ElementRef<HTMLElement>>('row');
+  private readonly tabs = viewChildren<ElementRef<HTMLButtonElement>>('tab');
   private readonly doc = inject(DOCUMENT);
   private readonly zone = inject(NgZone);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
-  private settledAt = 0;
   private observer?: IntersectionObserver;
+  private resizeObserver?: ResizeObserver;
 
-  slot(i: number): number {
-    return this.order().indexOf(i);
+  select(i: number): void {
+    this.active.set(i);
+    this.measure();
   }
 
-  isFront(i: number): boolean {
-    return this.order()[0] === i;
+  /** WAI-ARIA tabs: arrows move and select (wrapping), Home/End jump to the ends. */
+  onTabKey(event: KeyboardEvent, i: number): void {
+    const n = this.sites.length;
+    const next = ({ ArrowRight: (i + 1) % n, ArrowLeft: (i - 1 + n) % n, Home: 0, End: n - 1 } as Record<string, number>)[event.key];
+    if (next === undefined) return;
+    event.preventDefault();
+    this.select(next);
+    this.tabs()[next]?.nativeElement.focus();
   }
 
-  /** Pointer-driven: ignored while the previous move is still animating. */
-  hover(i: number): void {
-    if (Date.now() < this.settledAt) return;
-    this.bringToFront(i);
-  }
-
-  /** Click, keyboard focus or chip: always acts. */
-  bringToFront(i: number): void {
-    if (this.isFront(i)) return;
-    this.order.update(o => [i, ...o.filter(x => x !== i)]);
-    this.settledAt = Date.now() + SETTLE_MS;
-  }
-
-  /** Click on a frame: a back frame comes forward; the front one (or any frame on a phone) opens its Work card. */
+  /** Clicking the page opens its Work card further down. */
   frameClick(event: MouseEvent, i: number): void {
     event.preventDefault();
-    if (!this.isPhone() && !this.isFront(i)) {
-      this.bringToFront(i);
-      return;
-    }
     const card = this.doc.getElementById(`work-${this.sites[i].id}`);
     if (!card) return;
     card.scrollIntoView({ behavior: this.reducedMotion() ? 'auto' : 'smooth', block: 'center' });
@@ -93,10 +83,16 @@ export class HeroStackComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    if (!this.isBrowser || typeof IntersectionObserver === 'undefined') return;
-    const row = this.row()[0]?.nativeElement;
-    if (!row) return;
+    if (!this.isBrowser) return;
+    this.measure();
     this.zone.runOutsideAngular(() => {
+      const tablist = this.tabs()[0]?.nativeElement.parentElement;
+      if (tablist && typeof ResizeObserver !== 'undefined') {
+        this.resizeObserver = new ResizeObserver(() => this.measure());
+        this.resizeObserver.observe(tablist);
+      }
+      const row = this.row()[0]?.nativeElement;
+      if (!row || typeof IntersectionObserver === 'undefined') return;
       this.observer = new IntersectionObserver(entries => {
         for (const e of entries) {
           if (e.isIntersecting && e.intersectionRatio >= 0.6) {
@@ -111,10 +107,14 @@ export class HeroStackComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.observer?.disconnect();
+    this.resizeObserver?.disconnect();
   }
 
-  private isPhone(): boolean {
-    return this.isBrowser && window.matchMedia('(max-width: 991.98px)').matches;
+  private measure(): void {
+    if (!this.isBrowser) return;
+    const tab = this.tabs()[this.active()]?.nativeElement;
+    if (!tab || !tab.offsetWidth) return;
+    this.indicator.set({ x: tab.offsetLeft, w: tab.offsetWidth });
   }
 
   private reducedMotion(): boolean {
